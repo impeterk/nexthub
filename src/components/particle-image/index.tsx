@@ -9,7 +9,7 @@ const ParticleImage = dynamic(() => import("./image"), { ssr: false });
 export default function ClientParticleImage() {
   const { theme } = useSystemTheme();
   return (
-    <section className="container" key={theme}>
+    <section className="container h-[300px]" key={theme}>
       <ParticleImage
         src="/hero-logo.png"
         renderer="webgl"
