@@ -8,13 +8,13 @@ export default function Hero() {
   return (
     <section className="relative flex h-screen w-full flex-col items-center overflow-hidden md:h-[80vh]">
       <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
+        numSquares={50}
+        maxOpacity={0.15}
         duration={3}
         repeatDelay={1}
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-y-[-30%] skew-y-12",
+          "inset-x-0 inset-y-[-30%] skew-y-12",
         )}
       />
       <div className="pt-12 pl-4">
@@ -26,8 +26,8 @@ export default function Hero() {
           Fullstack developer
         </h2>
         <div className="mx-auto mt-12 max-w-5xl text-xl font-medium tracking-wide">
-          <TextAnimate animation="blurIn" delay={0.75} by="word" duration={0.5}>
-            Scalable applications. From Figma design to Production.
+          <TextAnimate animation="blurIn" delay={0.75} by="word" duration={1}>
+            Design. Develop. Deliver.
           </TextAnimate>
         </div>
       </div>

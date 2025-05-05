@@ -11,9 +11,9 @@ export const Header = () => {
         <Link href="/" className="inline-flex items-center gap-2 text-xl">
           <Image
             src="/hero-logo.png"
+            width={32}
+            height={(936 / 1080) * 32}
             alt="logo"
-            height={32}
-            width={30}
             className="dark:invert"
           />
           Peterk.dev
