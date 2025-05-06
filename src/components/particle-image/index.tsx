@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 
+import logo from "@/app/icon.png";
 import useSystemTheme from "@/hooks/use-system-theme";
 
 const ParticleImage = dynamic(() => import("./image"), { ssr: false });
@@ -11,7 +12,7 @@ export default function ClientParticleImage() {
   return (
     <section className="container h-[300px]" key={theme}>
       <ParticleImage
-        src="/hero-logo.png"
+        src={logo.src}
         renderer="webgl"
         canvasHeight="300"
         className="h-full w-full"

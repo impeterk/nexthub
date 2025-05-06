@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import logo from "@/app/icon.png";
+
 import { Button } from "./ui/button";
 import { ThemeSwitch } from "./ui/theme-switch";
 
@@ -10,7 +12,7 @@ export const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <Link href="/" className="inline-flex items-center gap-2 text-xl">
           <Image
-            src="/hero-logo.png"
+            src={logo.src}
             width={32}
             height={(936 / 1080) * 32}
             alt="logo"
