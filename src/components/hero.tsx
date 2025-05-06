@@ -6,7 +6,7 @@ import ClientParticleImage from "./particle-image";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-screen w-full flex-col items-center overflow-hidden md:h-[80vh]">
+    <section className="relative flex w-full flex-col items-center overflow-hidden pb-20">
       <AnimatedGridPattern
         numSquares={50}
         maxOpacity={0.15}
@@ -14,7 +14,7 @@ export default function Hero() {
         repeatDelay={1}
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] skew-y-12",
+          "inset-x-0 inset-y-[-5%] skew-y-12",
         )}
       />
       <div className="pt-12 pl-4">
@@ -26,7 +26,13 @@ export default function Hero() {
           Fullstack developer
         </h2>
         <div className="mx-auto mt-12 max-w-5xl text-xl font-medium tracking-wide">
-          <TextAnimate animation="blurIn" delay={0.75} by="word" duration={1}>
+          <TextAnimate
+            once={true}
+            animation="blurIn"
+            delay={0.75}
+            by="word"
+            duration={1}
+          >
             Design. Develop. Deliver.
           </TextAnimate>
         </div>

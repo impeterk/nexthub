@@ -6,7 +6,7 @@ import { ThemeSwitch } from "./ui/theme-switch";
 
 export const Header = () => {
   return (
-    <header className="bg-background text-foreground border-b">
+    <header className="bg-background text-foreground sticky top-0 left-0 z-50 border-b">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <Link href="/" className="inline-flex items-center gap-2 text-xl">
           <Image
