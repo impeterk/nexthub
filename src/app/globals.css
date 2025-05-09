@@ -118,4 +118,9 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  .cover::before {
+    content: " ";
+    @apply bg-background pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)];
+  }
 }

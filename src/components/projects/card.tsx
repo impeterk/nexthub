@@ -11,11 +11,17 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card
-      className="max-w-md min-w-sm border-none shadow-none"
+      className="w-full max-w-md border-none shadow-none"
       key={project.title}
     >
       <MagicCard
@@ -35,7 +41,19 @@ export function ProjectCard({ project }: { project: Project }) {
           <section className="flex w-full items-center gap-2">
             {project.tech?.map((el, idx) => {
               const Icon = el.icon;
-              return <Icon className={el.className} key={idx} />;
+              return (
+                <TooltipProvider key={idx}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Icon className={el.className} />
+                    </TooltipTrigger>
+
+                    <TooltipContent>
+                      <p>{el.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              );
             })}
             <Button variant={"link"} asChild className="ml-auto">
               <a href={project.link} target="_blank">
