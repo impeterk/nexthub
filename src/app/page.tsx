@@ -40,8 +40,8 @@ export default function Home() {
               </Button>
             </BlurFade>
           </div>
-          <BlurFade delay={0.35} direction="left" inView offset={100}>
-            <article className="w-full max-w-2xl">
+          <article className="w-full max-w-2xl overflow-x-hidden">
+            <BlurFade delay={0.35} direction="left" inView offset={100}>
               <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
                 The Joke Tax Chronicles
               </h1>
@@ -68,8 +68,8 @@ export default function Home() {
                 "After all," he said, "everyone enjoys a good joke, so it's only
                 fair that they should pay for the privilege."
               </blockquote>
-            </article>
-          </BlurFade>
+            </BlurFade>
+          </article>
         </div>
       </section>
     </section>
