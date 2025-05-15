@@ -1,13 +1,15 @@
+"use client";
+
 import { projects } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
-import { ProjectCard } from "./card";
+import { HoverEffect } from "../ui/card-hover-effect";
 
 export default function Projects() {
   return (
     <section className="bg-background relative mt-10 min-h-screen w-full">
       <div className="container mx-auto">
-        <h2 className="from-accent to-primary relative z-20 bg-gradient-to-b bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
+        <h2 className="to-primary relative z-20 bg-gradient-to-b from-indigo-950 to-50% bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
           Projects
         </h2>
       </div>
@@ -20,11 +22,10 @@ export default function Projects() {
         )}
       />
       <div className="cover"></div>
-      <div className="flex flex-wrap content-center items-center justify-center gap-6">
-        {projects.map((project) => (
+      {/* {projects.map((project) => (
           <ProjectCard project={project} key={project.title} />
-        ))}
-      </div>
+        ))} */}
+      <HoverEffect items={projects} />
     </section>
   );
 }

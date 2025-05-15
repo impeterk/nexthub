@@ -101,7 +101,7 @@ export const projects: Project[] = [
     link: "mylinkzone.vercel.app",
     tech: [
       { name: "Next js", icon: IconBrandNextjs, className: "" },
-      { name: "Vercel", icon: IconBrandVercel, className: "fill-primary" },
+      { name: "Vercel", icon: IconBrandVercel, className: "fill-white" },
       {
         name: "Drizzle ORM",
         icon: SimpleIconsDrizzle,
