@@ -1,9 +1,5 @@
 import { ComponentType } from "react";
 
-import SimpleIconsDrizzle from "@@/assets/icon-drizzle";
-import VscodeIconsFileTypeMjml from "@@/assets/icon-mjml";
-import VscodeIconsFileTypeReactrouter from "@@/assets/icon-react-router";
-import SimpleIconsTurso from "@@/assets/icon-turso";
 import {
   IconBrandAzure,
   IconBrandNextjs,
@@ -15,6 +11,11 @@ import {
   IconBrandVercel,
   IconBrandVue,
 } from "@tabler/icons-react";
+
+import SimpleIconsDrizzle from "@/assets/icon-drizzle";
+import VscodeIconsFileTypeMjml from "@/assets/icon-mjml";
+import VscodeIconsFileTypeReactrouter from "@/assets/icon-react-router";
+import SimpleIconsTurso from "@/assets/icon-turso";
 
 export type Project = {
   title: string;
