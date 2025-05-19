@@ -29,7 +29,7 @@ export const ProjectDialog = ({
   return (
     <Dialog>
       {children}
-      <DialogContent className="sm:max-w-7xl">
+      <DialogContent className="h-full overflow-y-scroll sm:max-w-7xl">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
@@ -79,12 +79,12 @@ export const ProjectDialog = ({
             <div className="mt-auto">
               <AnimatedImages />
             </div>
-            <div className="mt-20 mb-20 flex w-full items-center justify-center gap-6">
+            <div className="my-10 flex w-full flex-wrap items-center justify-center gap-6 md:my-20">
               {tech?.map((el, idx) => {
                 const Icon = el.icon;
                 return (
                   <div className="flex flex-col items-center gap-2" key={idx}>
-                    <Icon className={cn(el.className, "size-12")} />
+                    <Icon className={cn(el.className, "size-12 md:size-12")} />
                     <Badge variant={"outline"}>{el.name}</Badge>
                   </div>
                 );
@@ -93,7 +93,7 @@ export const ProjectDialog = ({
           </div>
         </section>
         <DialogFooter>
-          <Button className="mr-12" size={"lg"}>
+          <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
             <>
               Live in Prod
               <IconArrowNarrowRight />
