@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
     // typedRoutes: true, //not supported by turbopack yet :-(
     reactCompiler: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

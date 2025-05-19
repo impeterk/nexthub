@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
@@ -115,11 +116,10 @@ export const AnimatedImages = ({
                 }}
                 className="absolute inset-0 origin-bottom"
               >
-                <img
+                <Image
                   src={testimonial.src}
                   alt={testimonial.name}
-                  width={500}
-                  height={500}
+                  fill
                   draggable={false}
                   className="h-full w-full rounded-3xl object-cover object-center"
                 />
