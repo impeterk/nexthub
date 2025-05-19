@@ -95,7 +95,10 @@ export const HoverEffect = ({
                 })}
                 <ProjectDialog title={item.title}>
                   <DialogTrigger asChild>
-                    <Button variant={"link"} className="ml-auto">
+                    <Button
+                      variant={"link"}
+                      className="ml-auto hover:cursor-pointer"
+                    >
                       {/* <a href={item.link} target="_blank"> */}
                       Discover
                       <IconArrowNarrowRight />
