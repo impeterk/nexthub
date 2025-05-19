@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -11,6 +11,14 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "./button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./dialog";
 import {
   Tooltip,
   TooltipContent,
@@ -85,17 +93,52 @@ export const HoverEffect = ({
                     </TooltipProvider>
                   );
                 })}
-                <Button variant={"link"} asChild className="ml-auto">
-                  <a href={item.link} target="_blank">
-                    Discover
-                    <IconArrowNarrowRight />
-                  </a>
-                </Button>
+                <ProjectDialog title={item.title}>
+                  <DialogTrigger asChild>
+                    <Button variant={"link"} className="ml-auto">
+                      {/* <a href={item.link} target="_blank"> */}
+                      Discover
+                      <IconArrowNarrowRight />
+                      {/* </a> */}
+                    </Button>
+                  </DialogTrigger>
+                </ProjectDialog>
               </section>
             </CardFooter>
           </Card>
         </div>
       ))}
     </div>
+  );
+};
+
+const ProjectDialog = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) => {
+  return (
+    <Dialog>
+      {children}
+      <DialogContent className="sm:max-w-7xl">
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+        </DialogHeader>
+        <DialogDescription>
+          This action cannot be undone. This will permanently delete your
+          account and remove your data from our servers.This action cannot be
+          undone. This will permanently delete your account and remove your data
+          from our servers.This action cannot be undone. This will permanently
+          delete your account and remove your data from our servers.This action
+          cannot be undone. This will permanently delete your account and remove
+          your data from our servers.This action cannot be undone. This will
+          permanently delete your account and remove your data from our
+          servers.This action cannot be undone. This will permanently delete
+          your account and remove your data from our servers.
+        </DialogDescription>
+      </DialogContent>
+    </Dialog>
   );
 };
