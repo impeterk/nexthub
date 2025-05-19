@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import faviconDark from "@/assets/favicon-dark.png";
-import faviconLight from "@/assets/icon.png";
+import useSystemTheme from "@/hooks/use-system-theme";
 
 export default function DynamicFavicon() {
   const [mounted, setMounted] = useState(false);
+  const { theme } = useSystemTheme();
   // After mounting, we can safely show the favicon that matches the theme
   useEffect(() => {
     setMounted(true);
@@ -14,12 +14,8 @@ export default function DynamicFavicon() {
 
   useEffect(() => {
     if (!mounted) return;
-
     // Get all existing favicon links
     const existingFavicons = document.querySelectorAll('link[rel="icon"]');
-    const darkTheme = document
-      .querySelector("html")
-      ?.classList.contains("dark");
     // Remove any existing favicons
     existingFavicons.forEach((favicon) => {
       document.head.removeChild(favicon);
@@ -28,10 +24,10 @@ export default function DynamicFavicon() {
     // Create new favicon link
     const link = document.createElement("link");
     link.rel = "icon";
-    link.href = darkTheme ? faviconDark.src : faviconLight.src;
+    link.href = theme === "dark" ? "/favicon-dark.png" : "/favicon.png";
     // Add the new favicon to the document
     document.head.appendChild(link);
-  }, [mounted]);
+  }, [theme, mounted]);
 
   // Don't render anything on the server or during client hydration
   if (!mounted) return null;

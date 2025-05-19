@@ -25,7 +25,6 @@ export const ProjectDialog = ({
   children: ReactNode;
   tech: Project["tech"];
 }) => {
-  console.log("server");
   return (
     <Dialog>
       {children}

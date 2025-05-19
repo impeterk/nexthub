@@ -15,7 +15,7 @@ export function ThemeSwitch() {
   useEffect(() => {
     setMounted(true);
     return () => setMounted(false);
-  });
+  }, []);
   if (!mounted) {
     return <ThemeSwitchFallback />;
   }

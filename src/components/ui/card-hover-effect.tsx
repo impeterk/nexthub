@@ -93,7 +93,7 @@ export const HoverEffect = ({
                       className="ml-auto hover:cursor-pointer"
                     >
                       {/* <a href={item.link} target="_blank"> */}
-                      Discover
+                      Learn More
                       {/* </a> */}
                     </Button>
                   </DialogTrigger>

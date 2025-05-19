@@ -7,7 +7,6 @@ type SetTheme = Dispatch<SetStateAction<Theme>>;
 
 export default function useSystemTheme() {
   const { theme, setTheme, systemTheme } = useTheme();
-  console.log({ theme, systemTheme });
   return useMemo(() => {
     return {
       theme: theme === "system" ? systemTheme : theme,

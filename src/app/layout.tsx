@@ -31,13 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <DynamicFavicon />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[auto_1fr_auto] font-sans`}
       >
         <Providers>
+          <DynamicFavicon />
           <Header />
           <main>{children}</main>
           <Footer />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "@/assets/icon.png";
+import logo from "@/app/icon.png";
 
 import { Button } from "./ui/button";
 import { ThemeSwitch } from "./ui/theme-switch";
