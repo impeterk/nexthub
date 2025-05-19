@@ -28,11 +28,11 @@ export const ProjectDialog = ({
   return (
     <Dialog>
       {children}
-      <DialogContent className="h-full overflow-y-scroll sm:max-w-7xl">
+      <DialogContent className="max-lg:h-[95vh] sm:max-w-7xl">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <section className="grid gap-12 md:grid-cols-2">
+        <section className="grid gap-12 overflow-y-auto lg:grid-cols-2">
           <article className="prose prose-indigo dark:prose-invert">
             <section aria-labelledby="overview">
               <h2 id="overview">Overview</h2>
