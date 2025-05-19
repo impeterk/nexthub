@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-import logo from "@/app/icon.png";
+import logo from "@/assets/icon.png";
 import useSystemTheme from "@/hooks/use-system-theme";
 
 const ParticleImage = dynamic(() => import("./image"), { ssr: false });

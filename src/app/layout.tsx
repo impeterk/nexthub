@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
 import Providers from "@/providers";
 
@@ -30,6 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <DynamicFavicon />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[auto_1fr_auto] font-sans`}
       >
