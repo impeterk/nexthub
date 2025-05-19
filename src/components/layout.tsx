@@ -29,7 +29,7 @@ export const Header = () => {
 export const Footer = () => {
   return (
     <footer className="text-muted-foreground p-4 text-center">
-      <Button asChild variant={"link"}>
+      <Button variant={"link"}>
         <> &copy; Peter Kudelas | {new Date().getUTCFullYear()}</>
       </Button>
     </footer>
