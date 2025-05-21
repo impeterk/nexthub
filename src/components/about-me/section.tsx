@@ -9,7 +9,7 @@ import ProfileImage from "./profile";
 
 export default function AboutMeSection() {
   return (
-    <section className="mt-10">
+    <section className="mt-10 bg-transparent pt-20 pb-10">
       <h2 className="to-primary relative z-20 bg-gradient-to-b from-indigo-950 to-50% bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
         About Me
       </h2>
