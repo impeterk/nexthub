@@ -4,6 +4,7 @@ import {
   IconBrandAstro,
   IconBrandFirebase,
   IconBrandGit,
+  IconBrandLaravel,
   IconBrandNextjs,
   IconBrandNodejs,
   IconBrandNuxt,
@@ -64,7 +65,14 @@ export const tech: Tech[] = [
       "All-in-one web framework for building fast, content-focused websites with less JavaScript and island architecture.",
     link: "https://astro.build",
   },
-
+  {
+    name: "Laravel",
+    icon: IconBrandLaravel,
+    className: "text-red-500 stroke-[0.75]",
+    description:
+      "Complete  PHP framework framework for web artisans. Everything you need to build, deploy, and monitor web applications.",
+    link: "https://laravel.com",
+  },
   {
     name: "React Router / Remix",
     icon: VscodeIconsFileTypeReactrouter,

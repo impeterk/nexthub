@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 
-import { projects } from "@/lib/data/projects";
 import { Tech, tech } from "@/lib/data/tech";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { HoverEffect } from "../ui/card-hover-effect";
+import FeaturedProjects from "./featured";
 
 const firstRow = tech.slice(0, tech.length / 2);
 const secondRow = tech.slice(tech.length / 2);
@@ -86,7 +83,7 @@ export default function Projects() {
       {/* {projects.map((project) => (
           <ProjectCard project={project} key={project.title} />
         ))} */}
-      <HoverEffect items={projects} />
+      <FeaturedProjects />
       <div className="relative grid grid-rows-2 overflow-hidden pt-20">
         <Marquee pauseOnHover className="[--duration:90s]">
           {firstRow.map((tech) => (
