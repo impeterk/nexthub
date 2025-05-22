@@ -89,7 +89,7 @@ export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gap: `1px`,
+        gap: "1px",
       }}
     >
       {[...Array(stars)].map((_, starIdx) => {

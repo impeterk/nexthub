@@ -26,7 +26,7 @@ export const HoverEffect = ({
   items: Project[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const router = useRouter();
   return (
     <div

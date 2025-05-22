@@ -49,7 +49,7 @@ export const LampContainer = ({
             ease: "easeInOut",
           }}
           style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+            backgroundImage: "conic-gradient(var(--conic-position), var(--tw-gradient-stops))",
           }}
           className="bg-gradient-conic absolute inset-auto right-1/2 h-56 w-[30rem] overflow-visible from-indigo-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
@@ -65,7 +65,7 @@ export const LampContainer = ({
             ease: "easeInOut",
           }}
           style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+            backgroundImage: "conic-gradient(var(--conic-position), var(--tw-gradient-stops))",
           }}
           className="bg-gradient-conic absolute inset-auto left-1/2 h-56 w-[30rem] from-transparent via-transparent to-indigo-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
