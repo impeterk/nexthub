@@ -46,7 +46,7 @@ export default async function RootLayout({
           <DynamicFavicon />
           <Header />
           <main>{children}</main>
-          <Footer />
+          <Footer lang={lang} />
         </Providers>
         <SpeedInsights />
         <Analytics />

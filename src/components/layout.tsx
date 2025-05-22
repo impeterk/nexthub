@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import logo from "@/app/icon.png";
 
+import LanguageSwitch from "./lang-switch";
 import { Button } from "./ui/button";
 import { ThemeSwitch } from "./ui/theme-switch";
 
@@ -26,12 +27,15 @@ export const Header = () => {
   );
 };
 
-export const Footer = () => {
+export const Footer = ({ lang }: { lang: string }) => {
   return (
-    <footer className="text-muted-foreground p-4 text-center">
-      <Button variant={"link"}>
+    <footer className="text-muted-foreground container mx-auto flex items-center justify-center p-4 text-center">
+      <Button variant={"link"} className="ml-auto">
         <> &copy; Peter Kudelas | {new Date().getUTCFullYear()}</>
       </Button>
+      <div className="ml-auto">
+        <LanguageSwitch lang={lang} />
+      </div>
     </footer>
   );
 };
