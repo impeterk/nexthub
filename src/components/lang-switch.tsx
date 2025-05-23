@@ -18,7 +18,7 @@ export default function LanguageSwitch({ lang }: { lang: string }) {
           <IconLanguage className="mr-1 size-5" /> {lang}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-full min-w-0">
         {langs.map((el) => (
           <DropdownMenuItem key={el} asChild>
             <a href={`/${el}`} className="flex items-center justify-between">
