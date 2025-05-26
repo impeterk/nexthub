@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import AboutMeSection from "@/components/about-me/section";
 import ContactSection from "@/components/contact/section";
 import Hero from "@/components/hero";
@@ -11,7 +13,9 @@ export default function Home() {
         <Projects />
         <AboutMeSection />
       </div>
-      <ContactSection />
+      <Suspense>
+        <ContactSection />
+      </Suspense>
     </section>
   );
 }

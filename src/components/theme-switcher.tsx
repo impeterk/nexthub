@@ -9,11 +9,13 @@ import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/cn";
 
+const defFunc = () => null;
+
 function ThemeOption({
   icon,
   value,
   isActive,
-  onClick,
+  onClick = defFunc,
 }: {
   icon: JSX.Element;
   value: string;
