@@ -65,7 +65,7 @@ export function ThemeSwitch() {
   );
 }
 
-function ThemeSwitchFallback() {
+export function ThemeSwitchFallback() {
   return (
     <div className="inline-flex rounded-lg border">
       <Button
@@ -73,17 +73,17 @@ function ThemeSwitchFallback() {
         size="icon"
         className={cn("size-8 rounded-r-none")}
       >
-        <IconSun className="size-5" />
+        <IconDeviceDesktop className="size-4" />
       </Button>
       <Button variant="ghost" size="icon" className={cn("size-8 rounded-none")}>
-        <IconMoon className="size-5" />
+        <IconSun className="size-4" />
       </Button>
       <Button
         variant="ghost"
         size="icon"
         className={cn("size-8 rounded-l-none")}
       >
-        <IconDeviceDesktop className="size-5" />
+        <IconMoon className="size-4" />
       </Button>
     </div>
   );

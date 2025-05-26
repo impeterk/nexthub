@@ -4,8 +4,8 @@ import Link from "next/link";
 import logo from "@/app/icon.png";
 
 import LanguageSwitch from "./lang-switch";
+import { ThemeSwitcher } from "./theme-switcher";
 import { Button } from "./ui/button";
-import { ThemeSwitch } from "./ui/theme-switch";
 
 export const Header = () => {
   return (
@@ -21,7 +21,8 @@ export const Header = () => {
           />
           Peterk.dev
         </Link>
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
+        <ThemeSwitcher />
       </div>
     </header>
   );
