@@ -5,10 +5,12 @@ import Projects from "@/components/projects/section";
 
 export default function Home() {
   return (
-    <section className="container mx-auto px-4 md:px-6">
-      <Hero />
-      <Projects />
-      <AboutMeSection />
+    <section className="mx-auto px-4 md:px-6">
+      <div className="container mx-auto">
+        <Hero />
+        <Projects />
+        <AboutMeSection />
+      </div>
       <ContactSection />
     </section>
   );
