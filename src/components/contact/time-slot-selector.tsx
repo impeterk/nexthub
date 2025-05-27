@@ -24,8 +24,14 @@ const generateTimeSlots = (): TimeSlot[] => {
   return slots;
 };
 const timeSlots = generateTimeSlots();
-
-export default function TimeSlotSelector({ setSession, setDuration }) {
+interface TimeSlotSelectorProps {
+  setSession: (session: string) => void;
+  setDuration: (duration: SessionDuration) => void;
+}
+export default function TimeSlotSelector({
+  setSession,
+  setDuration,
+}: TimeSlotSelectorProps) {
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [sessionDuration, setSessionDuration] = useState<SessionDuration>(30);
 
