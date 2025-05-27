@@ -12,9 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import TimeSlotSelector from "./time-slot-selector";
 
 export default function BookConsultation() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(
+    new Date(Date.now() + 24 * 60 * 60 * 1000),
+  );
   return (
     <Card>
       <CardHeader>
@@ -30,10 +33,11 @@ export default function BookConsultation() {
           mode="single"
           className="w-full"
           disabled={(date) =>
-            date < new Date() || date < new Date("1900-01-01")
+            date <= new Date() || date < new Date("1900-01-01")
           }
           initialFocus
         />
+        <TimeSlotSelector />
       </CardContent>
       <CardFooter>
         <Button>Save password</Button>

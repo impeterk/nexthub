@@ -28,7 +28,7 @@ export const ProjectDialog = ({
   return (
     <Dialog>
       {children}
-      <DialogContent className="max-lg:h-[95vh] sm:max-w-7xl">
+      <DialogContent className="max-lg:h-[95svh] sm:max-w-7xl">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>

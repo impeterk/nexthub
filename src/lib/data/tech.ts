@@ -77,8 +77,7 @@ export const tech: Tech[] = [
     name: "React Router / Remix",
     icon: VscodeIconsFileTypeReactrouter,
     className: "size-7",
-    description:
-      "Full-stack React framework featuring nested routing, data loaders/actions, and progressive enhancement for fast, resilient web apps.",
+    description: "Full-stack React framework for fast, resilient web apps.",
     link: "https://reactrouter.com",
   },
   {
