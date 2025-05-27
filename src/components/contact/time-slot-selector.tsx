@@ -24,7 +24,8 @@ const generateTimeSlots = (): TimeSlot[] => {
   return slots;
 };
 const timeSlots = generateTimeSlots();
-export default function TimeSlotSelector() {
+
+export default function TimeSlotSelector({ setSession, setDuration }) {
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [sessionDuration, setSessionDuration] = useState<SessionDuration>(30);
 
@@ -63,20 +64,15 @@ export default function TimeSlotSelector() {
 
   const handleTimeSelect = (time: string) => {
     if (canSelectSlot(time)) {
-      setSelectedTime(selectedTime === time ? "" : time);
+      const newTime = selectedTime === time ? "" : time;
+      setSelectedTime(newTime);
+      setSession(newTime);
+      setDuration(sessionDuration);
     }
   };
 
-  const getEndTime = (startTime: string, duration: SessionDuration) => {
-    const [hours, minutes] = startTime.split(":").map(Number);
-    const totalMinutes = hours * 60 + minutes + duration;
-    const endHours = Math.floor(totalMinutes / 60);
-    const endMins = totalMinutes % 60;
-    return `${endHours.toString().padStart(2, "0")}:${endMins.toString().padStart(2, "0")}`;
-  };
-
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-6">
+    <div className="mx-auto w-full max-w-2xl space-y-2 max-lg:mt-2">
       {/* Session Duration Toggle */}
       <div className="space-y-2">
         <label className="text-sm font-medium">Session Duration</label>
@@ -87,6 +83,8 @@ export default function TimeSlotSelector() {
             onClick={() => {
               setSessionDuration(30);
               setSelectedTime("");
+              setDuration(30);
+              setSession("");
             }}
           >
             30 minutes
@@ -97,6 +95,8 @@ export default function TimeSlotSelector() {
             onClick={() => {
               setSessionDuration(60);
               setSelectedTime("");
+              setDuration(60);
+              setSession("");
             }}
           >
             1 hour
