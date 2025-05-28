@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { IconCalendarPlus } from "@tabler/icons-react";
 
+import { bookConsultaion } from "@/lib/data/actions";
+
 import { Button } from "../ui/button";
 import { Calendar } from "../ui/calendar";
 import {
@@ -35,55 +37,70 @@ export default function BookConsultation() {
 
   const [session, setSession] = useState<string>("");
   const [duration, setDuration] = useState<SessionDuration>(30);
+
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Book a consultation</CardTitle>
-        <CardDescription>
-          short description for book a consultation
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="mb-2">
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" required />
-        </div>
-        <div className="mb-4 flex flex-col items-center justify-center md:flex-row">
-          <Calendar
-            onSelect={setDate}
-            selected={date}
-            mode="single"
-            className="w-full"
-            disabled={(date) =>
-              date <= new Date() || date < new Date("1900-01-01")
-            }
-            fromDate={new Date(date?.getFullYear()!, date?.getMonth()!)}
-            initialFocus
-          />
-          <TimeSlotSelector setSession={setSession} setDuration={setDuration} />
-        </div>
-        {session && date && (
-          <div className="bg-muted space-y-2 rounded-lg p-4">
-            <h3 className="font-medium">Selected time and date</h3>
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-bold">
-                {date.getDay()!}.{date.getMonth()}.{date.getFullYear()}
-              </span>
-              <span className="">
-                {session} - {getEndTime(session, duration)}
-              </span>
-              <span className="text-muted-foreground text-sm">
-                ({duration} minutes)
-              </span>
-            </div>
+      <form action={bookConsultaion}>
+        <input hidden value={String(date)} name="day" type="text" readOnly />
+        <input
+          hidden
+          value={`${session} - ${getEndTime(session, duration)}`}
+          name="time"
+          type="text"
+          readOnly
+        />
+        <CardHeader>
+          <CardTitle>Book a consultation</CardTitle>
+          <CardDescription>
+            short description for book a consultation
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="mb-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" type="email" required />
           </div>
-        )}
-      </CardContent>
-      <CardFooter>
-        <Button>
-          Book a consultation <IconCalendarPlus className="ml-2 size-4" />{" "}
-        </Button>
-      </CardFooter>
+          <div className="mb-4 flex flex-col items-center justify-center md:flex-row">
+            <Calendar
+              onSelect={setDate}
+              selected={date}
+              mode="single"
+              className="w-full"
+              disabled={(date) =>
+                date <= new Date() || date < new Date("1900-01-01")
+              }
+              fromDate={new Date(date?.getFullYear()!, date?.getMonth()!)}
+              initialFocus
+            />
+            <TimeSlotSelector
+              setSession={setSession}
+              setDuration={setDuration}
+            />
+          </div>
+          {session && date && (
+            <div className="bg-muted space-y-2 rounded-lg p-4">
+              <h3 className="font-medium">Selected time and date</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-lg font-bold">
+                  {date.toLocaleDateString("sk")}
+                </span>
+                <span className="">
+                  {session} - {getEndTime(session, duration)}
+                </span>
+                <span className="text-muted-foreground text-sm">
+                  ({duration} minutes)
+                </span>
+              </div>
+            </div>
+          )}
+        </CardContent>
+        <CardFooter>
+          <Button type="submit">
+            Book a consultation{" "}
+            <IconCalendarPlus className="ml-2 size-4" />{" "}
+          </Button>
+        </CardFooter>
+      </form>
     </Card>
   );
 }

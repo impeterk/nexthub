@@ -84,6 +84,7 @@ export default function TimeSlotSelector({
         <label className="text-sm font-medium">Session Duration</label>
         <div className="flex gap-2">
           <Button
+            type="button"
             variant={sessionDuration === 30 ? "default" : "outline"}
             size="sm"
             onClick={() => {
@@ -96,6 +97,7 @@ export default function TimeSlotSelector({
             30 minutes
           </Button>
           <Button
+            type="button"
             variant={sessionDuration === 60 ? "default" : "outline"}
             size="sm"
             onClick={() => {
@@ -116,6 +118,7 @@ export default function TimeSlotSelector({
         <div className="grid max-h-80 grid-cols-4 gap-2 overflow-y-auto">
           {timeSlots.map((slot) => (
             <Button
+              type="button"
               key={slot.time}
               variant={isSlotSelected(slot.time) ? "default" : "outline"}
               size="sm"
