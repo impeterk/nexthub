@@ -15,13 +15,15 @@ const bookConsultationSchema = z.object({
       return date;
     }),
   time: z.string(),
+  duration: z.coerce.number(),
 });
 
-export const bookConsultaion = async (formData: FormData) => {
+export const bookConsultaion = async (prevState: any, formData: FormData) => {
   const data = bookConsultationSchema.parse({
     email: formData.get("email"),
     day: formData.get("day"),
     time: formData.get("time"),
+    duration: formData.get("duration"),
   });
   console.log({ data });
 };

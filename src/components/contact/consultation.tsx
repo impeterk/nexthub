@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useActionState, useState, useTransition } from "react";
 
 import { IconCalendarPlus } from "@tabler/icons-react";
 
@@ -37,18 +37,24 @@ export default function BookConsultation() {
 
   const [session, setSession] = useState<string>("");
   const [duration, setDuration] = useState<SessionDuration>(30);
+  const [email, setEmail] = useState<string>("");
 
+  const [state, formAction] = useActionState(bookConsultaion, null);
+  const [isPending, startTransition] = useTransition();
+  async function handleSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
+    e.preventDefault();
+    const data = new FormData();
+    data.set("email", email);
+    data.set("day", String(date));
+    data.set("time", session);
+    data.set("duration", String(duration));
+    startTransition(async () => {
+      formAction(data);
+    });
+  }
   return (
     <Card>
-      <form action={bookConsultaion}>
-        <input hidden value={String(date)} name="day" type="text" readOnly />
-        <input
-          hidden
-          value={`${session} - ${getEndTime(session, duration)}`}
-          name="time"
-          type="text"
-          readOnly
-        />
+      <form onSubmit={handleSubmit}>
         <CardHeader>
           <CardTitle>Book a consultation</CardTitle>
           <CardDescription>
@@ -58,7 +64,14 @@ export default function BookConsultation() {
         <CardContent>
           <div className="mb-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="mb-4 flex flex-col items-center justify-center md:flex-row">
             <Calendar
@@ -95,7 +108,7 @@ export default function BookConsultation() {
           )}
         </CardContent>
         <CardFooter>
-          <Button type="submit">
+          <Button type="submit" disabled={isPending}>
             Book a consultation{" "}
             <IconCalendarPlus className="ml-2 size-4" />{" "}
           </Button>
