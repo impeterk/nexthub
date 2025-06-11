@@ -49,30 +49,6 @@ export const projects: Project[] = [
     link: "https://henkel-adhesives.com/check-my-ticket.html",
   },
   {
-    title: "MJ2R",
-    description: "Scalable email templates for (non)developers",
-    tech: [
-      { name: "React", icon: IconBrandReact, className: "text-sky-500" },
-      {
-        name: "React Router",
-        icon: VscodeIconsFileTypeReactrouter,
-        className: "size-7",
-      },
-      { name: "MJML", icon: VscodeIconsFileTypeMjml, className: "size-5" },
-      {
-        name: "Typescript",
-        icon: IconBrandTypescript,
-        className: "text-blue-500",
-      },
-      {
-        name: "TailwindCSS",
-        icon: IconBrandTailwind,
-        className: "text-cyan-500",
-      },
-    ],
-    link: "https://mj2r.peterk.dev",
-  },
-  {
     title: "For Every You",
     description: "Selfie generation App for Schwarzkopf",
     link: "#",
@@ -94,6 +70,31 @@ export const projects: Project[] = [
         className: "text-cyan-500",
       },
     ],
+  },
+  {
+    title: "MJ2R",
+    description: "Scalable email templates for (non)developers",
+    tech: [
+      { name: "React", icon: IconBrandReact, className: "text-sky-500" },
+      {
+        name: "React Router",
+        icon: VscodeIconsFileTypeReactrouter,
+        className: "size-7",
+      },
+
+      { name: "MJML", icon: VscodeIconsFileTypeMjml, className: "size-5" },
+      {
+        name: "Typescript",
+        icon: IconBrandTypescript,
+        className: "text-blue-500",
+      },
+      {
+        name: "TailwindCSS",
+        icon: IconBrandTailwind,
+        className: "text-cyan-500",
+      },
+    ],
+    link: "https://mj2r.peterk.dev",
   },
   {
     title: "mylinkzone",

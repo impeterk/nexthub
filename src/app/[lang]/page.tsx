@@ -5,12 +5,14 @@ import ContactSection from "@/components/contact/section";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects/section";
 
-export default function Home() {
+export default async function Home({ params }) {
+  const { lang } = await params;
+  console.log({ lang });
   return (
     <section className="mx-auto px-4 md:px-6">
       <div className="container mx-auto">
         <Hero />
-        <Projects />
+        <Projects lang={lang} />
         <AboutMeSection />
       </div>
       <Suspense>

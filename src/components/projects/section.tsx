@@ -16,13 +16,18 @@ import FeaturedProjects from "./featured";
 const firstRow = tech.slice(0, tech.length / 2);
 const secondRow = tech.slice(tech.length / 2);
 
+interface ReviewCardProps extends Tech {
+  lang?: "en" | "sk";
+}
+
 const ReviewCard = ({
   name,
   icon,
   className,
   link = "",
   description,
-}: Tech) => {
+  lang = "en",
+}: ReviewCardProps) => {
   const Icon = icon;
   return link ? (
     <Link href={link} target="_blank">
@@ -39,7 +44,7 @@ const ReviewCard = ({
         </CardHeader>
         <CardContent className="px-4 pt-0">
           <CardDescription className="text-pretty">
-            {description}
+            {description[lang]}
           </CardDescription>
         </CardContent>
       </Card>
@@ -57,13 +62,15 @@ const ReviewCard = ({
         </div>
       </CardHeader>
       <CardContent className="px-4 pt-0">
-        <CardDescription className="text-pretty">{description}</CardDescription>
+        <CardDescription className="text-pretty">
+          {description[lang]}
+        </CardDescription>
       </CardContent>
     </Card>
   );
 };
 
-export default function Projects() {
+export default function Projects({ lang }: { lang: "en" | "sk" }) {
   return (
     <section className="bg-background relative mt-10 w-full py-20">
       <div className="container mx-auto pb-20">
@@ -87,12 +94,12 @@ export default function Projects() {
       <div className="relative grid grid-rows-2 overflow-hidden pt-20">
         <Marquee pauseOnHover className="[--duration:90s]">
           {firstRow.map((tech) => (
-            <ReviewCard key={tech.name} {...tech} />
+            <ReviewCard key={tech.name} {...tech} lang={lang} />
           ))}
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:90s]">
           {secondRow.map((tech) => (
-            <ReviewCard key={tech.name} {...tech} />
+            <ReviewCard key={tech.name} {...tech} lang={lang} />
           ))}
         </Marquee>
         <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
