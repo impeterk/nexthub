@@ -27,7 +27,9 @@ export function ProjectCard({ item }: { item: Project }) {
       </CardContent>
       <CardFooter>
         <section className="flex w-full items-center gap-2">
-          {item.tech?.map((el, idx) => <TechIcons el={el} key={idx} />)}
+          {item.tech?.map((el, idx) => (
+            <TechIcons el={el} key={idx} />
+          ))}
           {/* <ProjectDialog title={item.title}>
             <DialogTrigger asChild>
               <Button variant={"link"} className="ml-auto hover:cursor-pointer">

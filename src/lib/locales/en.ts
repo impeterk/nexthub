@@ -1,6 +1,5 @@
 export const en = {
-    projects: {
-        title: 'Projects',
-        
-    }
-}
+  projects: {
+    title: "Projects",
+  },
+};
