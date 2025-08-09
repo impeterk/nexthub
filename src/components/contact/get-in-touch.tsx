@@ -28,7 +28,8 @@ export function GetInTouch() {
         <CardHeader>
           <CardTitle>Get in touch</CardTitle>
           <CardDescription>
-            Short description for the get in touch form
+            Have a project in mind or need a developer's insight? <br />
+            Reach out below—I'd love to hear from you!
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
@@ -41,7 +42,7 @@ export function GetInTouch() {
               name="name"
               required
             />
-            {state?.errors.name?.[0] && (
+            {state?.errors?.name?.[0] && (
               <Label className="text-destructive">Name is required</Label>
             )}
           </div>
@@ -54,7 +55,7 @@ export function GetInTouch() {
               name="email"
               required
             />
-            {state?.errors.email?.[0] && (
+            {state?.errors?.email?.[0] && (
               <Label className="text-destructive">
                 Please provide a valid email
               </Label>
@@ -70,7 +71,7 @@ export function GetInTouch() {
               className="field-sizing-fixed"
               required
             />
-            {state?.errors.message?.[0] && (
+            {state?.errors?.message?.[0] && (
               <Label className="text-destructive">
                 Please provide lovely message
               </Label>

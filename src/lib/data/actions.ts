@@ -33,5 +33,13 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
     };
   }
   const res = await insertMessage(data.data);
-  console.log({ res });
+  if (!res.length) {
+    return {
+      success: false,
+      error: {
+        db: "My database is on a smoke brake, please try again later...",
+      },
+    };
+  }
+  return { sucess: true };
 };

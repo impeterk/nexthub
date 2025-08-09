@@ -63,7 +63,8 @@ export default function BookConsultation() {
         <CardHeader>
           <CardTitle>Book a consultation</CardTitle>
           <CardDescription>
-            short description for book a consultation
+            Ready to discuss your project? Book a consultation and let's bring
+            your ideas to life.
           </CardDescription>
         </CardHeader>
         <CardContent>
