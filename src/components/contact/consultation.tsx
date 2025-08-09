@@ -38,6 +38,7 @@ export default function BookConsultation() {
   const [session, setSession] = useState<string>("");
   const [duration, setDuration] = useState<SessionDuration>(30);
   const [email, setEmail] = useState<string>("");
+  const enableSend = session && duration && email;
 
   const [state, formAction] = useActionState(bookConsultaion, null);
   const [isPending, startTransition] = useTransition();
@@ -52,6 +53,10 @@ export default function BookConsultation() {
       formAction(data);
     });
   }
+  function handleEmailChange(value: string) {
+    setEmail(value);
+    if (state?.errors?.email) state.errors.email = [""];
+  }
   return (
     <Card>
       <form onSubmit={handleSubmit}>
@@ -62,16 +67,24 @@ export default function BookConsultation() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="mb-2">
-            <Label htmlFor="email">Email</Label>
+          <div className="mb-1">
+            <Label htmlFor="email" className="mb-1">
+              Email
+            </Label>
             <Input
               id="email"
               name="email"
               type="email"
-              required
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => handleEmailChange(e.target.value)}
             />
+            <label
+              htmlFor="email"
+              className="text-destructive"
+              dangerouslySetInnerHTML={{
+                __html: state?.errors?.email?.[0] || "&nbsp;",
+              }}
+            ></label>
           </div>
           <div className="mb-4 flex flex-col items-center justify-center md:flex-row">
             <Calendar
@@ -108,7 +121,11 @@ export default function BookConsultation() {
           )}
         </CardContent>
         <CardFooter>
-          <Button type="submit" disabled={isPending}>
+          <Button
+            className="w-full"
+            type="submit"
+            disabled={isPending || !enableSend}
+          >
             Book a consultation{" "}
             <IconCalendarPlus className="ml-2 size-4" />{" "}
           </Button>

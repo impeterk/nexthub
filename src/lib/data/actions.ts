@@ -1,38 +1,24 @@
 "use server";
 
-import { z } from "zod";
-
-const bookConsultationSchema = z.object({
-  email: z.string().email("Please provide a valid email"),
-  day: z
-    .string()
-    .min(1, "day cannot be empty")
-    .transform((val) => {
-      const date = new Date(val);
-      if (isNaN(date.getTime())) {
-        throw new Error("Invalid date format");
-      }
-      return date;
-    }),
-  time: z.string(),
-  duration: z.coerce.number(),
-});
+import { insertMessage } from "../db/inserts";
+import { bookConsultationSchema, getInTouchSchema } from "../shared/schemas";
 
 export const bookConsultaion = async (prevState: any, formData: FormData) => {
-  const data = bookConsultationSchema.parse({
+  const data = bookConsultationSchema.safeParse({
     email: formData.get("email"),
     day: formData.get("day"),
     time: formData.get("time"),
     duration: formData.get("duration"),
   });
-  console.log({ data });
+  if (!data.success) {
+    console.log("errors", data.error.flatten().fieldErrors);
+    return {
+      success: false,
+      errors: data.error.flatten().fieldErrors,
+    };
+  }
+  return { success: true, ...data.data };
 };
-
-const getInTouchSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Please provide valid email"),
-  message: z.string().min(1, "Please provide a message"),
-});
 
 export const getInTouch = async (previousState: any, formData: FormData) => {
   const data = getInTouchSchema.safeParse({
@@ -46,5 +32,6 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
       errors: data.error.flatten().fieldErrors,
     };
   }
-  const { name, email, message } = data.data;
+  const res = await insertMessage(data.data);
+  console.log({ res });
 };
