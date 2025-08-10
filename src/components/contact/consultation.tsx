@@ -1,6 +1,12 @@
 "use client";
 
-import { FormEvent, useActionState, useState, useTransition } from "react";
+import {
+  FormEvent,
+  useActionState,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
 
 import { IconCalendarPlus } from "@tabler/icons-react";
 
@@ -53,10 +59,19 @@ export default function BookConsultation() {
       formAction(data);
     });
   }
+
   function handleEmailChange(value: string) {
     setEmail(value);
     if (state?.errors?.email) state.errors.email = [""];
   }
+
+  useEffect(() => {
+    if (state?.success) {
+      setSession("");
+      setDuration(30);
+      setEmail("");
+    }
+  }, [state]);
   return (
     <Card>
       <form onSubmit={handleSubmit}>

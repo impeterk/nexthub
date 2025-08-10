@@ -1,7 +1,14 @@
 "use server";
 
-import { insertMessage } from "../db/inserts";
+import { insertConsultation, insertMessage } from "../db/mutations";
 import { bookConsultationSchema, getInTouchSchema } from "../shared/schemas";
+
+const dbError = {
+  success: false,
+  errors: {
+    db: "My database is on a smoke brake, please try again later...",
+  },
+};
 
 export const bookConsultaion = async (prevState: any, formData: FormData) => {
   const data = bookConsultationSchema.safeParse({
@@ -17,7 +24,12 @@ export const bookConsultaion = async (prevState: any, formData: FormData) => {
       errors: data.error.flatten().fieldErrors,
     };
   }
-  return { success: true, ...data.data };
+  console.log(data);
+  const res = await insertConsultation(data.data);
+  if (!res.length) {
+    return dbError;
+  }
+  return { success: true };
 };
 
 export const getInTouch = async (previousState: any, formData: FormData) => {
@@ -34,12 +46,7 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
   }
   const res = await insertMessage(data.data);
   if (!res.length) {
-    return {
-      success: false,
-      error: {
-        db: "My database is on a smoke brake, please try again later...",
-      },
-    };
+    return dbError;
   }
   return { sucess: true };
 };
