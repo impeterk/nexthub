@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
@@ -27,7 +28,8 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const router = useRouter();
+  const params = useParams<{ lang: "en" | "sk"; id: string }>();
+
   return (
     <div
       className={cn(
@@ -86,18 +88,14 @@ export const HoverEffect = ({
                     </TooltipProvider>
                   );
                 })}
-                <ProjectDialog title={item.title} tech={item.tech}>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant={"link"}
-                      className="ml-auto hover:cursor-pointer"
-                    >
-                      {/* <a href={item.link} target="_blank"> */}
-                      Learn More
-                      {/* </a> */}
-                    </Button>
-                  </DialogTrigger>
-                </ProjectDialog>
+                <Link href={`/${params.lang}/${item.id}`} scroll={false}>
+                  <Button
+                    variant={"link"}
+                    className="ml-auto hover:cursor-pointer"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </section>
             </CardFooter>
           </Card>

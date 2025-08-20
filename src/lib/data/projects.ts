@@ -18,6 +18,7 @@ import VscodeIconsFileTypeReactrouter from "@/assets/icon-react-router";
 import SimpleIconsTurso from "@/assets/icon-turso";
 
 export type Project = {
+  id: Number;
   title: string;
   description: string;
   link: string;
@@ -30,6 +31,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 0,
     title: "Check My Ticket",
     description: "salalj la laj la laj",
     tech: [
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     link: "https://henkel-adhesives.com/check-my-ticket.html",
   },
   {
+    id: 1,
     title: "For Every You",
     description: "Selfie generation App for Schwarzkopf",
     link: "#",
@@ -72,6 +75,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 2,
     title: "MJ2R",
     description: "Scalable email templates for (non)developers",
     tech: [
@@ -97,6 +101,7 @@ export const projects: Project[] = [
     link: "https://mj2r.peterk.dev",
   },
   {
+    id: 3,
     title: "mylinkzone",
     description: "LinkTree clone",
     link: "mylinkzone.vercel.app",
@@ -112,6 +117,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 4,
     title: "Value calculators",
     description: "Rebuild calculators for Henkel",
     tech: [

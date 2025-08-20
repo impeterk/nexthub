@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { ReactNode } from "react";
 
 import { IconCalendarPlus, IconMail } from "@tabler/icons-react";
 
 import { RetroGrid } from "../magicui/retro-grid";
 import { WordRotate } from "../magicui/word-rotate";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import BookConsultation from "./consultation";
 import { GetInTouch } from "./get-in-touch";
 
 const words = ["Get in Touch", "Book a consultation"];
 
-export default function ContactSection() {
+export default function ContactSection({ children }: { children: ReactNode }) {
   const searchParams = useSearchParams();
 
   const tab = searchParams.get("tab") ?? "contact";
@@ -61,9 +61,7 @@ export default function ContactSection() {
             <TabsContent value="contact">
               <GetInTouch />
             </TabsContent>
-            <TabsContent value="consultation">
-              <BookConsultation />
-            </TabsContent>
+            <TabsContent value="consultation">{children}</TabsContent>
           </Tabs>
         </div>
       </section>
