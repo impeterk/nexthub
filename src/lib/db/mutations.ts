@@ -17,6 +17,7 @@ export async function insertConsultation(
 ) {
   return await db
     .insert(consultationsTable)
+    // @ts-expect-error overload error not used anyway
     .values({
       date: data.day,
       email: data.email,

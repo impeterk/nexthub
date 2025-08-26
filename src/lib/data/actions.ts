@@ -8,6 +8,9 @@ const dbError = {
   success: false,
   errors: {
     db: "My database is on a smoke brake, please try again later...",
+    email: null,
+    name: null,
+    message: null,
   },
 };
 
