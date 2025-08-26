@@ -1,14 +1,8 @@
-export default async function Layout({
-  children,
-  project,
-}: Readonly<{
-  children: React.ReactNode;
-  project: React.ReactNode;
-}>) {
+export default async function Layout(props: LayoutProps<"/">) {
   return (
     <>
-      {project}
-      {children}
+      {props.project}
+      {props.children}
     </>
   );
 }

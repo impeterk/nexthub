@@ -28,14 +28,8 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "sk" }];
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: "en" | "sk" }>;
-}>) {
-  const { lang } = await params;
+export default async function RootLayout(props: LayoutProps<"/[lang]">) {
+  const { lang } = await props.params;
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -45,7 +39,7 @@ export default async function RootLayout({
         <Providers>
           <DynamicFavicon />
           <Header />
-          <main>{children}</main>
+          <main>{props.children}</main>
           <Footer lang={lang} />
         </Providers>
         <SpeedInsights />

@@ -45,17 +45,17 @@ export default function ContactSection({ children }: { children: ReactNode }) {
                   <IconMail /> Get in touch
                 </Link>
               </TabsTrigger>
-              <TabsTrigger value="consultation" asChild>
-                <Link
-                  href={{
-                    query: {
-                      tab: "consultation",
-                    },
-                  }}
-                  scroll={false}
-                >
-                  <IconCalendarPlus /> Book a consultation
-                </Link>
+              <TabsTrigger value="consultation" disabled>
+                {/* <Link */}
+                {/*   href={{ */}
+                {/*     query: { */}
+                {/*       tab: "consultation", */}
+                {/*     }, */}
+                {/*   }} */}
+                {/*   scroll={false} */}
+                {/* > */}
+                <IconCalendarPlus /> Book a consultation
+                {/* </Link> */}
               </TabsTrigger>
             </TabsList>
             <TabsContent value="contact">

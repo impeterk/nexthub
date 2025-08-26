@@ -23,9 +23,9 @@ export default function LanguageSwitch({ lang }: { lang: string }) {
       <DropdownMenuContent className="w-full min-w-0">
         {langs.map((el) => (
           <DropdownMenuItem key={el} asChild>
-            <Link href={`/${el}`} className="flex items-center justify-between">
+            <a href={`/${el}`} className="flex items-center justify-between">
               {el} {el === lang && <IconCheck />}
-            </Link>
+            </a>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
