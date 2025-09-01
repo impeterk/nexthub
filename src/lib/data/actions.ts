@@ -1,8 +1,9 @@
 "use server";
 
+import { cookies } from "next/headers";
+
 import { insertConsultation, insertMessage } from "../db/mutations";
 import { bookConsultationSchema, getInTouchSchema } from "../shared/schemas";
-import { projects } from "./projects";
 
 const dbError = {
   success: false,
@@ -55,6 +56,11 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
   return { sucess: true };
 };
 
-export const loadProjectData = async (previousState: any, id: string) => {
-  return projects.find((project) => project.id === Number(id)) || "";
+export const setPrefLang = async (lang: string) => {
+  const cookieStore = await cookies();
+  cookieStore.set({
+    name: "__pref_lang",
+    value: lang,
+    path: "/",
+  });
 };

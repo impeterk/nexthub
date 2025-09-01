@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
@@ -9,10 +9,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { type Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
-import { ProjectDialog } from "../projects/dialog";
 import { Button } from "./button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./card";
-import { DialogTrigger } from "./dialog";
 import {
   Tooltip,
   TooltipContent,
@@ -28,7 +26,7 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const params = useParams<{ lang: "en" | "sk"; id: string }>();
+  const params = useParams<{ lang: "en" | "sk"; project: string }>();
 
   return (
     <div
@@ -68,7 +66,7 @@ export const HoverEffect = ({
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="p-4">{item.description}</div>
+              <div className="p-4">{item.description[params.lang]}</div>
             </CardContent>
             <CardFooter>
               <section className="flex w-full items-center gap-2">
