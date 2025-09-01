@@ -1,12 +1,14 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import localFont from "next/font/local";
 
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 
 import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
+import { GTM_ID } from "@/lib/consts";
 import { useLocales } from "@/lib/data/locales";
 import Providers from "@/providers";
 
@@ -41,6 +43,7 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
 
   return (
     <html lang={lang} suppressHydrationWarning>
+      {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[auto_1fr_auto] font-sans`}
       >
