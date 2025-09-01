@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import NextTopLoader from "nextjs-toploader";
 
 import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
@@ -36,6 +37,7 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[auto_1fr_auto] font-sans`}
       >
+        <NextTopLoader color="oklch(0.71 0.16 293.4)" />
         <Providers>
           <DynamicFavicon />
           <Header />
