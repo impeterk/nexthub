@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     id: "for-every-you",
     title: "For Every You",
-    description: "Selfie generation App for Schwarzkopf",
+    description: { en: "Selfie generation App for Schwarzkopf", sk: "" },
     link: "#",
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
@@ -83,7 +83,7 @@ export const projects: Project[] = [
   {
     id: "mj2r",
     title: "MJ2R",
-    description: "Scalable email templates for (non)developers",
+    description: { en: "Scalable email templates for (non)developers", sk: "" },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
       {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
   {
     id: "my-linkz-one",
     title: "mylinkzone",
-    description: "LinkTree clone",
+    description: { en: "LinkTree clone", sk: "" },
     link: "mylinkzone.vercel.app",
     tech: [
       { name: "Next js", icon: IconBrandNextjs, className: "" },
@@ -125,7 +125,7 @@ export const projects: Project[] = [
   {
     id: "value-calculators",
     title: "Value calculators",
-    description: "Rebuild calculators for Henkel",
+    description: { en: "Rebuild calculators for Henkel", sk: "" },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
       { name: "Sass", icon: IconBrandSass, className: "text-pink-500" },

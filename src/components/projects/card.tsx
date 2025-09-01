@@ -1,3 +1,7 @@
+"use client";
+
+import { useParams } from "next/navigation";
+
 import { type Project } from "@/lib/data/projects";
 
 import {
@@ -15,6 +19,7 @@ import {
 } from "../ui/tooltip";
 
 export function ProjectCard({ item }: { item: Project }) {
+  const params = useParams<{ lang: "en" | "sk"; project: string }>();
   return (
     <Card className="relative z-20 h-full overflow-hidden border border-transparent">
       <CardHeader>
@@ -23,25 +28,13 @@ export function ProjectCard({ item }: { item: Project }) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="p-4">{item.description}</div>
+        <div className="p-4">{item.description[params.lang]}</div>
       </CardContent>
       <CardFooter>
         <section className="flex w-full items-center gap-2">
           {item.tech?.map((el, idx) => (
             <TechIcons el={el} key={idx} />
           ))}
-          {/* <ProjectDialog title={item.title}>
-            <DialogTrigger asChild>
-              <Button variant={"link"} className="ml-auto hover:cursor-pointer">
-                <a href={item.link} target="_blank">
-                <>
-                  Discover
-                  <IconArrowNarrowRight />
-                </>
-                </a>
-              </Button>
-            </DialogTrigger>
-          </ProjectDialog> */}
         </section>
       </CardFooter>
     </Card>

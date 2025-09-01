@@ -2,7 +2,6 @@
 
 import { insertConsultation, insertMessage } from "../db/mutations";
 import { bookConsultationSchema, getInTouchSchema } from "../shared/schemas";
-import { projects } from "./projects";
 
 const dbError = {
   success: false,
@@ -53,8 +52,4 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
     return dbError;
   }
   return { sucess: true };
-};
-
-export const loadProjectData = async (previousState: any, id: string) => {
-  return projects.find((project) => project.id === Number(id)) || "";
 };

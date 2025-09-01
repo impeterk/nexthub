@@ -26,7 +26,7 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const params = useParams<{ lang: "en" | "sk"; id: string }>();
+  const params = useParams<{ lang: "en" | "sk"; project: string }>();
 
   return (
     <div
