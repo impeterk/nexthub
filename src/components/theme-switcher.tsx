@@ -3,10 +3,12 @@
 import type { JSX } from "react";
 import { useEffect, useState } from "react";
 
+import { useFavicon } from "@reactuses/core";
 import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 
+import useSystemTheme from "@/hooks/use-system-theme";
 import { cn } from "@/lib/cn";
 
 const defFunc = () => null;

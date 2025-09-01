@@ -20,9 +20,9 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@reactuses/core": "^6.0.6",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@tabler/icons-react": "^3.34.1",
-    "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/postgres": "^0.10.0",
     "@vercel/speed-insights": "^1.2.0",
@@ -71,3 +71,4 @@
     "@types/react-dom": "19.1.8"
   }
 }
+
