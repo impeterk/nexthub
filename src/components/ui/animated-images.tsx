@@ -117,7 +117,7 @@ export const AnimatedImages = ({
   );
 };
 
-function AnimatedImagesSkeleton() {
+export function AnimatedImagesSkeleton() {
   return (
     <div className="flex flex-col items-center">
       <Skeleton className="relative h-60 w-full md:h-80" />

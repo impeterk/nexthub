@@ -11,8 +11,6 @@ import {
 } from "@/components/ui/dialog";
 import { projectLoader } from "@/lib/data/loaders";
 
-import { Modal } from "./project-modal";
-
 export default async function ProjectModal({
   params,
 }: {
@@ -25,32 +23,30 @@ export default async function ProjectModal({
     content,
   } = await projectLoader({ lang, project });
   return (
-    <Modal>
-      <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl">
-        <DialogHeader className="mb-1 border-b">
-          <DialogTitle className="pb-2">{project}</DialogTitle>
-        </DialogHeader>
-        <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
-          <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:min-h-0 lg:overflow-y-auto">
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          </article>
-          <div className="flex w-full flex-col justify-center px-2 md:px-12">
-            <div className="mt-auto">
-              <AnimatedImages images={metaData.images} />
-            </div>
-            <TechSection tech={tech} />
+    <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl">
+      <DialogHeader className="mb-1 border-b">
+        <DialogTitle className="pb-2">{project}</DialogTitle>
+      </DialogHeader>
+      <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
+        <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:min-h-0 lg:overflow-y-auto">
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        </article>
+        <div className="flex w-full flex-col justify-center px-2 md:px-12">
+          <div className="mt-auto">
+            <AnimatedImages images={metaData.images} />
           </div>
-        </section>
+          <TechSection tech={tech} />
+        </div>
+      </section>
 
-        <DialogFooter className="mt-4">
-          <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
-            <>
-              Live in Prod
-              <IconArrowNarrowRight />
-            </>
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Modal>
+      <DialogFooter className="mt-4">
+        <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
+          <>
+            Live in Prod
+            <IconArrowNarrowRight />
+          </>
+        </Button>
+      </DialogFooter>
+    </DialogContent>
   );
 }

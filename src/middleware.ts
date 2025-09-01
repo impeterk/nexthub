@@ -4,6 +4,10 @@ const validLocales = ["en", "sk"];
 
 function getLocale(request: NextRequest) {
   const locales = request.headers.get("accept-language");
+  const localeFromCookies = request.cookies.get("__pref_lang");
+  if (localeFromCookies) {
+    return localeFromCookies.value;
+  }
   if (!locales) {
     return "en";
   }

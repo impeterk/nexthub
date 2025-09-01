@@ -1,5 +1,7 @@
 "use server";
 
+import { cookies } from "next/headers";
+
 import { insertConsultation, insertMessage } from "../db/mutations";
 import { bookConsultationSchema, getInTouchSchema } from "../shared/schemas";
 
@@ -52,4 +54,13 @@ export const getInTouch = async (previousState: any, formData: FormData) => {
     return dbError;
   }
   return { sucess: true };
+};
+
+export const setPrefLang = async (lang: string) => {
+  const cookieStore = await cookies();
+  cookieStore.set({
+    name: "__pref_lang",
+    value: lang,
+    path: "/",
+  });
 };
