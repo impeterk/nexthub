@@ -18,45 +18,47 @@ export default async function ProjectPage({
     tech,
     data: metaData,
     content,
+    images,
   } = await projectLoader({ lang, project });
-
   return (
-    <article className="relative container mx-auto h-full px-6">
-      <div className="bg-background sticky top-[65px] flex justify-between py-2">
-        <h1 className="mb-1 scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
-          {metaData.title}
-        </h1>
+    <div className="relative container mx-auto grid h-full place-items-center">
+      <article className="px-6">
+        <div className="bg-background sticky top-[65px] flex justify-between py-2">
+          <h1 className="mb-1 scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
+            {metaData.title}
+          </h1>
 
-        <Button
-          asChild
-          variant={"link"}
-          className="text-muted-foreground hover:text-foreground pr-0"
-        >
-          <Link href={`/${lang}`}>
-            <IconX />
-          </Link>
-        </Button>
-      </div>
-      <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
-        <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:max-h-[70vh] lg:min-h-0 lg:overflow-y-auto">
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </article>
-        <div className="flex w-full flex-col justify-center px-2 md:px-12">
-          <div className="mt-auto">
-            <AnimatedImages images={metaData.images} />
-          </div>
-          <TechSection tech={tech} />
+          <Button
+            asChild
+            variant={"link"}
+            className="text-muted-foreground hover:text-foreground pr-0"
+          >
+            <Link href={`/${lang}`}>
+              <IconX />
+            </Link>
+          </Button>
         </div>
-      </section>
+        <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
+          <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:max-h-[70vh] lg:min-h-0 lg:overflow-y-auto">
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+          </article>
+          <div className="flex w-full flex-col justify-center px-2 md:px-12">
+            <div className="mt-auto">
+              <AnimatedImages images={images} />
+            </div>
+            <TechSection tech={tech} />
+          </div>
+        </section>
 
-      <DialogFooter>
-        <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
-          <>
-            Live in Prod
-            <IconArrowNarrowRight />
-          </>
-        </Button>
-      </DialogFooter>
-    </article>
+        <DialogFooter>
+          <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
+            <>
+              Live in Prod
+              <IconArrowNarrowRight />
+            </>
+          </Button>
+        </DialogFooter>
+      </article>
+    </div>
   );
 }

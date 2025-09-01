@@ -119,7 +119,7 @@ export const AnimatedImages = ({
 
 export function AnimatedImagesSkeleton() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center rounded-lg">
       <Skeleton className="relative h-60 w-full md:h-80" />
     </div>
   );
