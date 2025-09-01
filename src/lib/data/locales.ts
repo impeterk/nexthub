@@ -2,6 +2,10 @@ import { NextRequest } from "next/server";
 
 export const locales = {
   en: {
+    meta: {
+      title: "Welcome",
+      description: `Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀`,
+    },
     projects: {
       title: "Projects",
     },
@@ -26,6 +30,10 @@ export const locales = {
     },
   },
   sk: {
+    meta: {
+      title: "Vitaj",
+      description: `Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀`,
+    },
     projects: {
       title: "Projekty",
     },

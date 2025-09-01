@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import localFont from "next/font/local";
 
 import { Analytics } from "@vercel/analytics/next";
@@ -7,6 +7,7 @@ import NextTopLoader from "nextjs-toploader";
 
 import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
+import { useLocales } from "@/lib/data/locales";
 import Providers from "@/providers";
 
 import "../globals.css";
@@ -20,10 +21,16 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
-  title: "Welcome | Peterk.dev Fullstack developer",
-  description: "Some lovely description",
-};
+export async function generateMetadata(
+  props: LayoutProps<"/[lang]">,
+): Promise<Metadata> {
+  const { lang } = (await props.params) as { lang: "en" | "sk" };
+  const locale = useLocales(lang);
+  return {
+    title: locale.meta.title,
+    description: locale.meta.description,
+  };
+}
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "sk" }];
