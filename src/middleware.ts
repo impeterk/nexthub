@@ -24,7 +24,7 @@ export const config = {
   matcher: [
     // Skip all internal paths (_next)
     // "/((?!_next).*)",
-    "/((?!api|admin|_next/static|_next/image|sitemap.xml|robots.txt|resume.pdf|.*\\.png$|.*\\.webp$).*)",
+    "/((?!api|admin|_next/static|opengraph-image|_next/image|sitemap.xml|robots.txt|resume.pdf|.*\\.png$|.*\\.webp$).*)",
     // Optional: only run on root (/) URL
   ],
 };
