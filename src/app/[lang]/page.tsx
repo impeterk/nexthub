@@ -21,7 +21,7 @@ export default async function Home({
       <div className="container mx-auto">
         <Hero />
         <Projects lang={lang} />
-        <AboutMeSection />
+        <AboutMeSection lang={lang} />
       </div>
       <Suspense>
         <ContactSection>

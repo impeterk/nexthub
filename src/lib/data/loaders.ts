@@ -1,9 +1,8 @@
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
-import { remark } from "remark";
-import html from "remark-html";
 
+import { markdownToHtml } from "../utils";
 import { projects } from "./projects";
 
 export async function projectLoader({
@@ -19,6 +18,5 @@ export async function projectLoader({
   );
   const tech = projects.find((val) => val.id === project)?.tech;
   const { data, content: markdown } = matter(fileContent);
-  const result = await remark().use(html).process(markdown);
-  return { tech, data, content: result.toString() };
+  return { tech, data, content: await markdownToHtml(markdown) };
 }

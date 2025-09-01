@@ -23,7 +23,7 @@ export default async function ProjectModal({
     content,
   } = await projectLoader({ lang, project });
   return (
-    <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl">
+    <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl lg:h-[calc(100vh-2*4rem)]">
       <DialogHeader className="mb-1 border-b">
         <DialogTitle className="pb-2">{project}</DialogTitle>
       </DialogHeader>
@@ -32,7 +32,7 @@ export default async function ProjectModal({
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </article>
         <div className="flex w-full flex-col justify-center px-2 md:px-12">
-          <div className="mt-auto">
+          <div className="">
             <AnimatedImages images={metaData.images} />
           </div>
           <TechSection tech={tech} />

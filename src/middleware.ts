@@ -1,25 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { getLocale } from "./lib/data/locales";
+
 const validLocales = ["en", "sk"];
-
-function getLocale(request: NextRequest) {
-  const locales = request.headers.get("accept-language");
-  const localeFromCookies = request.cookies.get("__pref_lang");
-  if (localeFromCookies) {
-    return localeFromCookies.value;
-  }
-  if (!locales) {
-    return "en";
-  }
-  const locale = locales.split(",").at(0);
-
-  if (locale?.includes("en")) {
-    return "en";
-  }
-  if (/(?:sk|cs)/i.test(locale!)) {
-    return "sk";
-  }
-}
 
 // Get the preferred locale, similar to the above or using a library
 export function middleware(request: NextRequest) {

@@ -1,17 +1,24 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { IconFileCv } from "@tabler/icons-react";
+import fs from "fs/promises";
+import matter from "gray-matter";
+import path from "path";
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Button } from "@/components/ui/button";
+import { useLocales } from "@/lib/data/locales";
+import { markdownToHtml } from "@/lib/utils";
 
 import ProfileImage from "./profile";
 
-export default function AboutMeSection() {
+export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
+  const locale = useLocales(lang);
   return (
     <section className="mt-10 bg-transparent pt-20 pb-10">
       <h2 className="to-primary relative z-20 bg-gradient-to-b from-indigo-950 to-50% bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
-        About Me
+        {locale.aboutMe.title}
       </h2>
       <div className="flex flex-col justify-around gap-8 md:flex-row">
         <div className="shrink-0">
@@ -23,7 +30,10 @@ export default function AboutMeSection() {
             className="hidden md:block"
           >
             <Button className="mt-6" size={"lg"} asChild>
-              <Link href="/resume.pdf" target="_blank">
+              <Link
+                href={{ pathname: "/resume.pdf", query: { lang } }}
+                target="_blank"
+              >
                 <IconFileCv className="mr-2 size-5" />
                 Resume
               </Link>
@@ -32,31 +42,9 @@ export default function AboutMeSection() {
         </div>
         <article className="w-full max-w-2xl overflow-x-hidden">
           <BlurFade delay={0.35} direction="left" inView offset={100}>
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              The Joke Tax Chronicles
-            </h1>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-              Once upon a time, in a far-off land, there was a very lazy king
-              who spent all day lounging on his throne. One day, his advisors
-              came to him with a problem: the kingdom was running out of money.
-            </p>
-            <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-              The King's Plan
-            </h2>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-              The king thought long and hard, and finally came up with{" "}
-              <a
-                href="#"
-                className="text-primary font-medium underline underline-offset-4"
-              >
-                a brilliant plan
-              </a>
-              : he would tax the jokes in the kingdom.
-            </p>
-            <blockquote className="mt-6 border-l-2 pl-6 italic">
-              "After all," he said, "everyone enjoys a good joke, so it's only
-              fair that they should pay for the privilege."
-            </blockquote>
+            <Suspense>
+              <Content lang={lang} />
+            </Suspense>
           </BlurFade>
         </article>
         <BlurFade delay={0.65} direction="up" inView className="flex md:hidden">
@@ -69,5 +57,19 @@ export default function AboutMeSection() {
         </BlurFade>
       </div>
     </section>
+  );
+}
+
+async function Content({ lang }: { lang: "en" | "sk" }) {
+  const fileContent = await fs.readFile(
+    path.join(process.cwd(), "src/lib/data/md", lang, "about-me.md"),
+    "utf-8",
+  );
+  const { content: markdown } = matter(fileContent);
+  const article = await markdownToHtml(markdown);
+  return (
+    <article className="prose prose-indigo dark:prose-invert">
+      <div dangerouslySetInnerHTML={{ __html: article }} />
+    </article>
   );
 }

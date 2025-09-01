@@ -1,20 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { ReactNode } from "react";
 
 import { IconCalendarPlus, IconMail } from "@tabler/icons-react";
+
+import { locales, useLocales } from "@/lib/data/locales";
 
 import { RetroGrid } from "../magicui/retro-grid";
 import { WordRotate } from "../magicui/word-rotate";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { GetInTouch } from "./get-in-touch";
 
-const words = ["Get in Touch", "Book a consultation"];
-
 export default function ContactSection({ children }: { children: ReactNode }) {
   const searchParams = useSearchParams();
+  const params = useParams<{ lang: "en" | "sk" }>();
+  const locale = useLocales(params.lang).contact;
 
   const tab = searchParams.get("tab") ?? "contact";
   return (
@@ -23,7 +25,7 @@ export default function ContactSection({ children }: { children: ReactNode }) {
         <RetroGrid className="z-[-1] h-[125%] -translate-y-1/3" angle={65} />
         <WordRotate
           duration={5000}
-          words={words}
+          words={locale.title}
           className="bg-opacity-50 from-foreground to-primary bg-gradient-to-b bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl"
         />
 
@@ -42,7 +44,7 @@ export default function ContactSection({ children }: { children: ReactNode }) {
                   }}
                   scroll={false}
                 >
-                  <IconMail /> Get in touch
+                  <IconMail /> {locales[params.lang].contact.title[0]}
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="consultation" disabled>
@@ -54,7 +56,9 @@ export default function ContactSection({ children }: { children: ReactNode }) {
                 {/*   }} */}
                 {/*   scroll={false} */}
                 {/* > */}
-                <IconCalendarPlus /> Book a consultation
+                <IconCalendarPlus /> {
+                  locales[params.lang].contact.title[1]
+                }{" "}
                 {/* </Link> */}
               </TabsTrigger>
             </TabsList>
