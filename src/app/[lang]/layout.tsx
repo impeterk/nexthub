@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
 import Providers from "@/providers";
 
@@ -37,8 +36,8 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[auto_1fr_auto] font-sans`}
       >
         <Providers>
-          <DynamicFavicon />
-          <Header />
+          {/* <DynamicFavicon /> */}
+          <Header lang={lang} />
           <main>{props.children}</main>
           <Footer lang={lang} />
         </Providers>

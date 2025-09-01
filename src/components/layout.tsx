@@ -7,11 +7,14 @@ import LanguageSwitch from "./lang-switch";
 import { ThemeSwitcher } from "./theme-switcher";
 import { Button } from "./ui/button";
 
-export const Header = () => {
+export const Header = ({ lang }: { lang: string }) => {
   return (
     <header className="bg-background text-foreground sticky top-0 left-0 z-50 border-b">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <Link href="/" className="inline-flex items-center gap-2 text-xl">
+        <Link
+          href={`/${lang}`}
+          className="inline-flex items-center gap-2 text-xl"
+        >
           <Image
             src={logo.src}
             width={32}

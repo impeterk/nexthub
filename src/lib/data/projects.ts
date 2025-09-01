@@ -18,9 +18,12 @@ import VscodeIconsFileTypeReactrouter from "@/assets/icon-react-router";
 import SimpleIconsTurso from "@/assets/icon-turso";
 
 export type Project = {
-  id: Number;
+  id: string;
   title: string;
-  description: string;
+  description: {
+    en: string;
+    sk: string;
+  };
   link: string;
   tech?: {
     name: string;
@@ -31,9 +34,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 0,
+    id: "check-my-ticket",
     title: "Check My Ticket",
-    description: "salalj la laj la laj",
+    description: {
+      en: "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with Azure LogicApps. Created with Vue, Pinia for state management, TailwindCSS for styling and Firebase for backend.",
+      sk: "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with Azure LogicApps. Created with Vue, Pinia for state management, TailwindCSS for styling and Firebase for backend.",
+    },
     tech: [
       { name: "Vue.js", icon: IconBrandVue, className: "text-emerald-500" },
       {
@@ -51,7 +57,7 @@ export const projects: Project[] = [
     link: "https://henkel-adhesives.com/check-my-ticket.html",
   },
   {
-    id: 1,
+    id: "for-every-you",
     title: "For Every You",
     description: "Selfie generation App for Schwarzkopf",
     link: "#",
@@ -75,7 +81,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: "mj2r",
     title: "MJ2R",
     description: "Scalable email templates for (non)developers",
     tech: [
@@ -101,7 +107,7 @@ export const projects: Project[] = [
     link: "https://mj2r.peterk.dev",
   },
   {
-    id: 3,
+    id: "my-linkz-one",
     title: "mylinkzone",
     description: "LinkTree clone",
     link: "mylinkzone.vercel.app",
@@ -117,7 +123,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 4,
+    id: "value-calculators",
     title: "Value calculators",
     description: "Rebuild calculators for Henkel",
     tech: [
