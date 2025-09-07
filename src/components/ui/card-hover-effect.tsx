@@ -66,7 +66,7 @@ export const HoverEffect = ({
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="p-4">{item.description[params.lang]}</div>
+              <div className="py-2">{item.description[params.lang]}</div>
             </CardContent>
             <CardFooter>
               <section className="flex w-full items-center gap-2">

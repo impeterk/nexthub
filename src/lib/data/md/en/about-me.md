@@ -1,22 +1,10 @@
-Hello Everyone 👋  
-I'm **Peter** from **Slovakia**. I've always had a strong curiosity for digital technologies—from computers and websites to how things work behind the scenes. However, life initially took me in a different direction, away from tech.
+Hello Everyone 👋
 
-That changed more than **three years ago**, when I made a bold decision to turn things around and pursue what I truly enjoy. I enrolled in the **Front-End Engineer Career Path** at Codecademy, and since then, I’ve been hooked.
+I'm **Peter**, a **Full-Stack** developer from Slovakia with more then three years of Experience. I've developed applications for businesses such as Henkel directly, Schwartzkopf or Henkel adhesives technologies division.
 
-I ❤️ every bit of web development—from building clean, responsive interfaces to bringing ideas to life with code.
+Feel free to grab my [resume](/resume.pdf) to learn more about me or visit my [NOW page](https://now.peterk.dev) to find out what I am doing right now.
 
-As I kept learning and growing, I quickly realized that **Full-Stack Development** is where my passion lies. The ability to work on both the frontend and backend gives me a complete view of how applications work, and I enjoy the challenge of solving problems across the entire stack.
-
-I'm currently expanding my skills in areas like:
-
-- Front-End
-  - React.js, Vue.js, Svelte
-- Meta Frameworks
-  - Next.js, Nuxt, Sveltekit, Astro
-- Back-End
-  - REST API, Express, PostgreSQL, Firebase DB
-- Authentication and full-stack app deployment
-
-My goal is to build **meaningful, user-friendly applications** that not only work well but also make a difference. I’m excited to continue this journey, collaborate with others, and keep leveling up as a developer.
+You can also leave a message or a book a consultation directly (**coming soon**).
+I’m excited to collaborate with others, and keep leveling up as a developer.
 
 Thanks for stopping by! 👨‍💻

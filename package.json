@@ -42,8 +42,11 @@
     "react": "19.1.1",
     "react-day-picker": "8.10.1",
     "react-dom": "19.1.1",
+    "rehype-external-links": "^3.0.0",
     "remark": "^15.0.1",
+    "remark-external-links": "^10.0.0",
     "remark-html": "^16.0.1",
+    "remark-rehype": "^11.1.2",
     "tailwind-merge": "^3.3.1",
     "tw-animate-css": "^1.3.6",
     "zod": "^3.25.76"

@@ -20,11 +20,12 @@ import SimpleIconsTurso from "@/assets/icon-turso";
 export type Project = {
   id: string;
   title: string;
+  wip?: boolean;
   description: {
     en: string;
     sk: string;
   };
-  link: string;
+  link?: string;
   tech?: {
     name: string;
     icon: ComponentType<{ className?: string }>;
@@ -37,7 +38,7 @@ export const projects: Project[] = [
     id: "check-my-ticket",
     title: "Check My Ticket",
     description: {
-      en: "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with Azure LogicApps. Created with Vue, Pinia for state management, TailwindCSS for styling and Firebase for backend.",
+      en: "Single Page Application (SPA) built for Henkel Webstudio for Azure DevOps integration.",
       sk: "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with Azure LogicApps. Created with Vue, Pinia for state management, TailwindCSS for styling and Firebase for backend.",
     },
     tech: [
@@ -59,7 +60,10 @@ export const projects: Project[] = [
   {
     id: "for-every-you",
     title: "For Every You",
-    description: { en: "Selfie generation App for Schwarzkopf", sk: "" },
+    description: {
+      en: "Selfie generation React application built for Schwarzkopf campaign",
+      sk: "",
+    },
     link: "#",
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
@@ -82,8 +86,12 @@ export const projects: Project[] = [
   },
   {
     id: "mj2r",
-    title: "MJ2R",
-    description: { en: "Scalable email templates for (non)developers", sk: "" },
+    title: "MJML + React Router",
+    wip: true,
+    description: {
+      en: "Scalable email templates for (non)developers built on top of MJML and React Router (v7)",
+      sk: "",
+    },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
       {
@@ -107,9 +115,12 @@ export const projects: Project[] = [
     link: "https://mj2r.peterk.dev",
   },
   {
-    id: "my-linkz-one",
-    title: "mylinkzone",
-    description: { en: "LinkTree clone", sk: "" },
+    id: "my-link-zone",
+    title: "My Link zone",
+    description: {
+      en: "My LinkTree clone built with Next.js and React server components",
+      sk: "",
+    },
     link: "mylinkzone.vercel.app",
     tech: [
       { name: "Next js", icon: IconBrandNextjs, className: "" },
@@ -124,8 +135,11 @@ export const projects: Project[] = [
   },
   {
     id: "value-calculators",
-    title: "Value calculators",
-    description: { en: "Rebuild calculators for Henkel", sk: "" },
+    title: "Value Calculators for Henkel",
+    description: {
+      en: "Relaunch of multiple extensive calculators built with React",
+      sk: "",
+    },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
       { name: "Sass", icon: IconBrandSass, className: "text-pink-500" },
@@ -135,6 +149,6 @@ export const projects: Project[] = [
         className: "size-7",
       },
     ],
-    link: "#",
+    link: "",
   },
 ];

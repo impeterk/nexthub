@@ -35,17 +35,8 @@ export default function ContactSection({ children }: { children: ReactNode }) {
             className="min-w-0 max-md:w-full md:min-w-lg"
           >
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="contact" asChild>
-                <Link
-                  href={{
-                    query: {
-                      tab: "contact",
-                    },
-                  }}
-                  scroll={false}
-                >
-                  <IconMail /> {locales[params.lang].contact.title[0]}
-                </Link>
+              <TabsTrigger value="contact">
+                <IconMail /> {locales[params.lang].contact.title[0]}
               </TabsTrigger>
               <TabsTrigger value="consultation" disabled>
                 {/* <Link */}
