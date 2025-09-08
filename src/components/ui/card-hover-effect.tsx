@@ -68,12 +68,12 @@ export const HoverEffect = ({
                 <p>{item.title}</p>
               </CardTitle>
               {item.wip && (
-                <Badge variant={"destructive"} className="ml-auto">
+                <Badge variant={"secondary"} className="ml-auto">
                   <p>{locale.wip}</p>
                 </Badge>
               )}
               {item.demo && (
-                <Badge variant={"secondary"} className="ml-auto">
+                <Badge className="ml-auto">
                   <p>Demo Project</p>
                 </Badge>
               )}

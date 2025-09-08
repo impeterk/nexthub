@@ -37,12 +37,12 @@ export default async function ProjectModal({
         <DialogTitle className="pb-0">{metaData.title}</DialogTitle>
         <div className="mr-auto ml-6 self-center max-lg:mx-auto">
           {wip && (
-            <Badge variant={"destructive"}>
+            <Badge variant={"secondary"}>
               <p>{locale.wip}</p>
             </Badge>
           )}
           {demo && (
-            <Badge variant={"secondary"}>
+            <Badge>
               <p>Demo Project</p>
             </Badge>
           )}

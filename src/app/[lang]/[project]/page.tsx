@@ -36,12 +36,12 @@ export default async function ProjectPage({
           </h1>
           <div className="mr-auto ml-6 self-center">
             {wip && (
-              <Badge variant={"destructive"}>
+              <Badge variant={"secondary"}>
                 <p>{locale.wip}</p>
               </Badge>
             )}
             {demo && (
-              <Badge variant={"secondary"}>
+              <Badge>
                 <p>Demo Project</p>
               </Badge>
             )}

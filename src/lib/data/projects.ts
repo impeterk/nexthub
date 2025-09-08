@@ -191,7 +191,7 @@ export const projects: Project[] = [
     title: "Value Calculators for Henkel",
     description: {
       en: "Relaunch of multiple extensive calculators built with React",
-      sk: "Prerobenie komplexných kalkulátorov pre Henkel pomocou React-u",
+      sk: "Komplexné kalkulačky pre Henkel vytvorené a optimalizované v React.js",
     },
     tech: [
       {
