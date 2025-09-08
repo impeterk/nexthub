@@ -30,7 +30,7 @@ export type Project = {
     name: string;
     icon: ComponentType<{ className?: string }>;
     className: string;
-    link?: string;
+    link: string;
   }[];
 };
 
@@ -197,7 +197,12 @@ export const projects: Project[] = [
         className: "text-sky-500",
         link: "https://react.dev",
       },
-      { name: "Sass", icon: IconBrandSass, className: "text-pink-500" },
+      {
+        name: "Sass",
+        icon: IconBrandSass,
+        className: "text-pink-500",
+        link: "https://sass-lang.com/",
+      },
 
       {
         name: "React Router",
