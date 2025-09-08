@@ -77,7 +77,7 @@ export const projects: Project[] = [
       en: "Selfie generation React application built for Schwarzkopf campaign",
       sk: "Selfie generátor vytvorený v Reacte pre novú Schwarzkopf kampaň",
     },
-    link: "",
+    link: "https://www.schwarzkopf-professional.com/com/en/silhouette-selfie.html",
     tech: [
       {
         name: "React",

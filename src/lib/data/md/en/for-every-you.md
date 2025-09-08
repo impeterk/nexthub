@@ -1,36 +1,31 @@
 ---
-liveLink: "https://henkel-adhesives.com/check-my-ticket.html"
-images:
-  [
-    https://raw.githubusercontent.com/impeterk/sveltefolio/refs/heads/main/src/lib/assets/vue-desktop.webp,
-  ]
-title: Check My Ticket
+liveLink: "https://www.schwarzkopf-professional.com/com/en/silhouette-selfie.html"
+title: For every you
 ---
 
 ## Overview
 
-This project is a **single-page full-stack web application** designed to extend and streamline workflows with **Azure DevOps**. The application focuses on secure **user authentication**, comprehensive **CRUD operations**, and direct integration with **Azure Logic Apps** for process automation. Built with a modern web technology stack, it demonstrates end-to-end development skills, including frontend engineering, backend integration, and deployment.
+Single-page web application designed to let users **capture selfies directly from their device camera**, enhance them with **Photoroom’s image processing API**, and provide simple tools for **adjustment, preview, and download**. Built with a **React + TypeScript stack**, the app ensures smooth performance, maintainable code, and a highly interactive user experience.
 
 ---
 
 ## Core Features
 
-- **User Authentication & Authorization**
+- **Camera Capture**
+  - Integrated with native device camera APIs for seamless photo capture.
+  - Supports both mobile and desktop devices with responsive layouts.
 
-  - Implemented secure sign-up, login, and session handling using **Firebase Authentication**.
-  - Supports email/password-based authentication with token management.
-  - Integrated role-based access control for restricted operations.
+- **Image Processing via Photoroom API**
+  - Sends captured selfies to **Photoroom API** for background removal and enhancement.
+  - Returns processed images in real-time for preview and adjustments.
 
-- **CRUD Operations**
+- **Image Adjustment Tools**
+  - Provides controls for resizing, repositioning, and applying minimal filters.
+  - Live preview of changes before finalizing download.
 
-  - Designed full **Create, Read, Update, Delete** functionality for managing Azure DevOps-related data entities.
-  - Implemented RESTful API endpoints and optimized database interactions.
-  - Ensured atomic operations with Firebase’s NoSQL database structure.
-
-- **Azure Logic Apps Integration**
-  - Connected application workflows with **Azure Logic Apps** to trigger automated processes.
-  - Enabled seamless communication between user actions and DevOps pipelines.
-  - Configured webhook-based triggers to respond to real-time events.
+- **Download Options**
+  - Users can export selfies in multiple formats (JPEG, PNG).
+  - Download flow optimized for both mobile and desktop.
 
 ---
 
@@ -38,66 +33,25 @@ This project is a **single-page full-stack web application** designed to extend 
 
 ### Frontend
 
-- **Vue.js** – Component-based architecture for building reactive user interfaces.
-- **Pinia** – State management library for handling application-level state efficiently.
-- **TailwindCSS** – Utility-first CSS framework for responsive and maintainable UI styling.
+- **React** – Component-based architecture for building dynamic UIs.
+- **React Router** – Client-side routing for a smooth single-page experience.
+- **TypeScript** – Strong typing for scalable and maintainable code.
+- **TailwindCSS** – Utility-first styling for rapid and consistent design.
 
-### Backend
+### Backend / API Integration
 
-- **Firebase** – Provided serverless backend with authentication, cloud database (Firestore), and hosting.
-- **Azure Logic Apps** – Integrated workflows with external DevOps automation pipelines.
+- **Photoroom API** – Handles background removal and selfie enhancement.
+- **Vite** – Modern build tool for fast development and optimized production builds.
 
 ### Additional Tools
 
-- **Git & Azure DevOps Repos** for version control and CI/CD.
-- **Postman** for API testing and debugging.
-- **Vite** as the build tool for fast local development.
-
----
-
-## Architecture
-
-The application follows a **modular SPA (Single-Page Application) architecture**:
-
-1. **Frontend Layer**
-
-   - Vue.js handles routing, component rendering, and UI interaction.
-   - Pinia ensures predictable state management across views.
-   - TailwindCSS provides reusable, responsive design patterns.
-
-2. **Backend Layer**
-
-   - Firebase Authentication manages users and sessions.
-   - Firestore stores persistent user data and project-related records.
-   - Cloud Functions (serverless) handle asynchronous operations when needed.
-
-3. **Integration Layer**
-   - Azure Logic Apps enable automation of workflows (e.g., triggering pipeline runs based on app data changes).
-   - Webhooks connect DevOps events back into the app ecosystem.
-
----
-
-## Development Process
-
-- **Project Setup**: Initialized Vue project with Vite, integrated Pinia, and set up TailwindCSS.
-- **Authentication Module**: Configured Firebase Auth and built login/registration flows with proper error handling.
-- **CRUD Implementation**: Designed modular services for Firestore to handle all database transactions.
-- **Azure Integration**: Configured API connections to Logic Apps and validated end-to-end DevOps pipeline automation.
-- **Testing & Debugging**: Used Postman and Firebase emulator suite for local testing.
-- **Deployment**: Deployed frontend and backend via Firebase Hosting with CI/CD pipelines connected to Azure DevOps.
-
----
-
-## Key Takeaways
-
-- Strengthened knowledge of **Vue.js composition API** and modern state management with Pinia.
-- Gained experience in **serverless backend development** with Firebase.
-- Learned practical **DevOps automation practices** by integrating with Azure Logic Apps.
-- Built a scalable and maintainable SPA architecture that can be extended with new features.
+- **Git & GitHub** – Version control and collaborative workflows.
+- **GitHub Actions** – Automated deployments and previews.
+- **ESLint + Prettier** – Enforced coding standards and formatting consistency.
 
 ---
 
 ## Repository & Demo
 
-- **Source Code**: [GitHub Repository](#) _(link here if available)_
-- **Live Demo**: [Hosted Application](#) _(link here if available)_
+- **Source Code**: ~~private repository~~
+- **Live Demo**: (coming soon)
