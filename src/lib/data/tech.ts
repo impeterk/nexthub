@@ -39,7 +39,7 @@ export const tech: Tech[] = [
     className: "",
     description: {
       en: "React framework with server-side rendering, static site generation, and API routes for production-ready applications.",
-      sk: "",
+      sk: "React framework with server-side rendering, static site generation, and API routes for production-ready applications.",
     },
 
     link: "https://nextjs.org",
@@ -50,7 +50,7 @@ export const tech: Tech[] = [
     className: "text-orange-500",
     description: {
       en: "Compiler-based framework that shifts work to build time for highly efficient, reactive UIs with minimal runtime code.",
-      sk: "",
+      sk: "Compiler-based framework that shifts work to build time for highly efficient, reactive UIs with minimal runtime code.",
     },
     link: "https://svelte.dev",
   },
@@ -60,7 +60,7 @@ export const tech: Tech[] = [
     className: "text-green-500",
     description: {
       en: "Vue framework offering server-side rendering, automatic routing, and powerful modules for building modern web apps.",
-      sk: "",
+      sk: "Vue framework offering server-side rendering, automatic routing, and powerful modules for building modern web apps.",
     },
     link: "https://nuxt.com",
   },
@@ -70,7 +70,7 @@ export const tech: Tech[] = [
     className: "",
     description: {
       en: "All-in-one web framework for building fast, content-focused websites with less JavaScript and island architecture.",
-      sk: "",
+      sk: "All-in-one web framework for building fast, content-focused websites with less JavaScript and island architecture.",
     },
     link: "https://astro.build",
   },
@@ -80,7 +80,7 @@ export const tech: Tech[] = [
     className: "text-red-500 stroke-[0.75]",
     description: {
       en: "Complete  PHP framework framework for web artisans. Everything you need to build, deploy, and monitor web applications.",
-      sk: "",
+      sk: "Complete  PHP framework framework for web artisans. Everything you need to build, deploy, and monitor web applications.",
     },
     link: "https://laravel.com",
   },
@@ -90,7 +90,7 @@ export const tech: Tech[] = [
     className: "size-7",
     description: {
       en: "Full-stack React framework for fast, resilient web apps.",
-      sk: "",
+      sk: "Full-stack React framework for fast, resilient web apps.",
     },
     link: "https://reactrouter.com",
   },
@@ -100,7 +100,7 @@ export const tech: Tech[] = [
     className: "text-cyan-500",
     description: {
       en: "Utility-first CSS framework for rapidly building custom designs without leaving your HTML.",
-      sk: "",
+      sk: "Utility-first CSS framework for rapidly building custom designs without leaving your HTML.",
     },
     link: "https://tailwindcss.com",
   },
@@ -110,7 +110,7 @@ export const tech: Tech[] = [
     className: "text-amber-500",
     description: {
       en: "Google's platform providing authentication, databases, storage, and serverless functions for full-stack development.",
-      sk: "",
+      sk: "Google's platform providing authentication, databases, storage, and serverless functions for full-stack development.",
     },
     link: "https://firebase.google.com",
   },
@@ -120,7 +120,7 @@ export const tech: Tech[] = [
     className: "text-green-500",
     description: {
       en: "Open-source Firebase alternative with PostgreSQL database, authentication, and real-time subscriptions.",
-      sk: "",
+      sk: "Open-source Firebase alternative with PostgreSQL database, authentication, and real-time subscriptions.",
     },
     link: "https://supabase.com",
   },
@@ -130,7 +130,7 @@ export const tech: Tech[] = [
     className: "text-sky-500",
     description: {
       en: "Component-based UI library for building interactive web interfaces with a virtual DOM for optimal performance.",
-      sk: "",
+      sk: "Component-based UI library for building interactive web interfaces with a virtual DOM for optimal performance.",
     },
     link: "https://react.dev",
   },
@@ -140,7 +140,7 @@ export const tech: Tech[] = [
     className: "text-emerald-500",
     description: {
       en: "Progressive JavaScript framework for building UIs with an approachable learning curve and flexible integration options.",
-      sk: "",
+      sk: "Progressive JavaScript framework for building UIs with an approachable learning curve and flexible integration options.",
     },
     link: "https://vuejs.org",
   },
@@ -153,7 +153,7 @@ export const tech: Tech[] = [
     className: "",
     description: {
       en: "Virtual private server deployment for complete control over hosting environment, configuration, and scalability.",
-      sk: "",
+      sk: "Virtual private server deployment for complete control over hosting environment, configuration, and scalability.",
     },
   },
   {
@@ -162,7 +162,7 @@ export const tech: Tech[] = [
     className: "text-lime-400 p-1 rounded size-6",
     description: {
       en: "TypeScript ORM with a focus on type safety, performance, and developer experience for SQL databases.",
-      sk: "",
+      sk: "TypeScript ORM with a focus on type safety, performance, and developer experience for SQL databases.",
     },
     link: "https://orm.drizzle.team",
   },
@@ -172,7 +172,7 @@ export const tech: Tech[] = [
     className: "fill-white",
     description: {
       en: "Platform for frontend frameworks and static sites with global CDN, serverless functions, and continuous deployment.",
-      sk: "",
+      sk: "Platform for frontend frameworks and static sites with global CDN, serverless functions, and continuous deployment.",
     },
     link: "https://vercel.com",
   },
@@ -182,7 +182,7 @@ export const tech: Tech[] = [
     className: "text-teal-500",
     description: {
       en: "Distributed SQLite database built for edge computing with global replication and minimal latency.",
-      sk: "",
+      sk: "Distributed SQLite database built for edge computing with global replication and minimal latency.",
     },
     link: "https://turso.tech",
   },
@@ -192,7 +192,7 @@ export const tech: Tech[] = [
     className: "",
     description: {
       en: "Self-contained, serverless database engine perfect for embedded applications and development environments.",
-      sk: "",
+      sk: "Self-contained, serverless database engine perfect for embedded applications and development environments.",
     },
     link: "https://www.sqlite.org",
   },
@@ -202,7 +202,7 @@ export const tech: Tech[] = [
     className: "",
     description: {
       en: "Next-generation ORM with intuitive data model, type safety, and automated migrations for various databases.",
-      sk: "",
+      sk: "Next-generation ORM with intuitive data model, type safety, and automated migrations for various databases.",
     },
     link: "https://www.prisma.io",
   },
@@ -212,7 +212,7 @@ export const tech: Tech[] = [
     className: "text-sky-500 size-5",
     description: {
       en: "Powerful, open-source object-relational database system with strong reputation for reliability and data integrity.",
-      sk: "",
+      sk: "Powerful, open-source object-relational database system with strong reputation for reliability and data integrity.",
     },
     link: "https://www.postgresql.org",
   },
@@ -222,7 +222,7 @@ export const tech: Tech[] = [
     className: "text-green-500",
     description: {
       en: "JavaScript runtime built on Chrome's V8 engine for building scalable network applications and APIs.",
-      sk: "",
+      sk: "JavaScript runtime built on Chrome's V8 engine for building scalable network applications and APIs.",
     },
     link: "https://nodejs.org",
   },
@@ -232,7 +232,7 @@ export const tech: Tech[] = [
     className: "text-blue-500",
     description: {
       en: "Strongly-typed JavaScript superset that enhances code quality, developer experience, and maintainability.",
-      sk: "",
+      sk: "Strongly-typed JavaScript superset that enhances code quality, developer experience, and maintainability.",
     },
     link: "https://www.typescriptlang.org",
   },
@@ -243,7 +243,7 @@ export const tech: Tech[] = [
     className: "text-orange-500",
     description: {
       en: "Distributed version control system for tracking changes, collaborating with teams, and managing code history.",
-      sk: "",
+      sk: "Distributed version control system for tracking changes, collaborating with teams, and managing code history.",
     },
     link: "https://git-scm.com",
   },

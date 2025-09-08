@@ -34,8 +34,8 @@ export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
                 href={{ pathname: "/resume.pdf", query: { lang } }}
                 target="_blank"
               >
-                <IconFileCv className="mr-2 size-5" />
-                Resume
+                <IconFileCv className="mr-2 size-5 capitalize" />
+                {locale.aboutMe.resume}
               </Link>
             </Button>
           </BlurFade>

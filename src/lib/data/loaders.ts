@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import fs from "fs/promises";
 import { globby } from "globby";
 import matter from "gray-matter";
@@ -13,10 +15,18 @@ export async function projectLoader({
   project: string;
   lang: string;
 }) {
-  const fileContent = await fs.readFile(
-    path.join(process.cwd(), "src/lib/data/md", lang, `${project}.md`),
-    "utf-8",
-  );
+  let fileContent = null;
+  try {
+    fileContent = await fs.readFile(
+      path.join(process.cwd(), "src/lib/data/md", lang, `${project}.md`),
+      "utf-8",
+    );
+  } catch (e) {
+    console.log(e);
+  }
+  if (!fileContent) {
+    throw notFound();
+  }
   const images = await Promise.all(
     (await globby(path.posix.join(process.cwd(), "src/assets", project))).map(
       async (image) => {
@@ -26,7 +36,12 @@ export async function projectLoader({
     ),
   );
 
-  const tech = projects.find((val) => val.id === project)?.tech;
+  const activeProject = projects.find((val) => val.id === project);
   const { data, content: markdown } = matter(fileContent);
-  return { images, tech, data, content: await markdownToHtml(markdown) };
+  return {
+    ...activeProject,
+    images,
+    data,
+    content: await markdownToHtml(markdown),
+  };
 }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 
 import { TechSection } from "@/components/projects/tech";
@@ -21,6 +23,8 @@ export default async function ProjectModal({
     tech,
     data: metaData,
     content,
+    link,
+    images,
   } = await projectLoader({ lang, project });
   return (
     <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl lg:h-[calc(100vh-2*4rem)]">
@@ -33,19 +37,25 @@ export default async function ProjectModal({
         </article>
         <div className="flex w-full flex-col justify-center px-2 md:px-12">
           <div className="">
-            <AnimatedImages images={metaData.images} />
+            <AnimatedImages images={images} />
           </div>
           <TechSection tech={tech} />
         </div>
       </section>
 
       <DialogFooter className="mt-4">
-        <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
-          <>
-            Live in Prod
-            <IconArrowNarrowRight />
-          </>
-        </Button>
+        {link && (
+          <Button
+            className="mr-12 max-sm:mx-auto max-sm:w-full"
+            size={"lg"}
+            asChild
+          >
+            <Link href={link} target="_blank">
+              Live in Prod
+              <IconArrowNarrowRight />
+            </Link>
+          </Button>
+        )}
       </DialogFooter>
     </DialogContent>
   );

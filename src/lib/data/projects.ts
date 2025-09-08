@@ -39,7 +39,7 @@ export const projects: Project[] = [
     title: "Check My Ticket",
     description: {
       en: "Single Page Application (SPA) built for Henkel Webstudio for Azure DevOps integration.",
-      sk: "Single page Full-stack Web Application for Azure DevOps. Handles user authentification, CRUD Operations and connection with Azure LogicApps. Created with Vue, Pinia for state management, TailwindCSS for styling and Firebase for backend.",
+      sk: "Single Page Application (SPA) vytvorená pre Henkel Webstudio pre lepšiu integráciu s Azure DevOps",
     },
     tech: [
       { name: "Vue.js", icon: IconBrandVue, className: "text-emerald-500" },
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     title: "For Every You",
     description: {
       en: "Selfie generation React application built for Schwarzkopf campaign",
-      sk: "",
+      sk: "Selfie generátor vytvorený v Reacte pre novú Schwarzkopf kampaň",
     },
     link: "#",
     tech: [
@@ -89,8 +89,8 @@ export const projects: Project[] = [
     title: "MJML + React Router",
     wip: true,
     description: {
-      en: "Scalable email templates for (non)developers built on top of MJML and React Router (v7)",
-      sk: "",
+      en: "Scalable email templates solution for non-developers built on top of MJML and React Router (v7)",
+      sk: "Riešenie Emailových templatov pre ne-vývojárov. Postavené na MJML a React Router (v7)",
     },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     title: "My Link zone",
     description: {
       en: "My LinkTree clone built with Next.js and React server components",
-      sk: "",
+      sk: "Klon populárneho LinkTr.ee. Postavený na Next.js a React server komponentoch",
     },
     link: "mylinkzone.vercel.app",
     tech: [
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     title: "Value Calculators for Henkel",
     description: {
       en: "Relaunch of multiple extensive calculators built with React",
-      sk: "",
+      sk: "Prerobenie komplexných kalkulátorov pre Henkel pomocou React-u",
     },
     tech: [
       { name: "React", icon: IconBrandReact, className: "text-sky-500" },

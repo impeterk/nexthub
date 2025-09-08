@@ -4,7 +4,8 @@ export const locales = {
   en: {
     meta: {
       title: "Welcome",
-      description: `Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀`,
+      description:
+        "Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀",
     },
     projects: {
       title: "Projects",
@@ -28,11 +29,18 @@ export const locales = {
         },
       },
     },
+    404: {
+      title: "Project not found",
+      description:
+        "Oops! The project you are trying to access could not be found. It may have been removed, renamed, or is temporarily unavailable.",
+      button: "Go Back to Home Page",
+    },
   },
   sk: {
     meta: {
       title: "Vitaj",
-      description: `Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀`,
+      description:
+        "Welcome to my portfolio! ✨ I'm a passionate full stack web developer from Slovakia. I bring the fun to web development. From sleek designs to ninja-like coding skills, I'm your go-to for turning online dreams into digital reality. Dive into my world of creativity and innovation. Let's craft a digital masterpiece together! 💻🚀",
     },
     projects: {
       title: "Projekty",
@@ -55,6 +63,12 @@ export const locales = {
           message: "Napíšte milú správu",
         },
       },
+    },
+    404: {
+      title: "Projekt sa nenasiel",
+      button: "Naspat na Domovsku stranku",
+      description:
+        "Oops! Projekt, ku ktory hladate, sa nenašiel. Mohol byť odstránený, premenovaný alebo je dočasne nedostupný.",
     },
   },
 };
