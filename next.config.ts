@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "next.peterk.dev",
+      },
+      {
+        protocol: "https",
         hostname: "raw.githubusercontent.com",
       },
     ],
