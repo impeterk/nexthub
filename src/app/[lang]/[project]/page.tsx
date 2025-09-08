@@ -4,9 +4,11 @@ import { IconArrowNarrowRight, IconX } from "@tabler/icons-react";
 
 import { TechSection } from "@/components/projects/tech";
 import { AnimatedImages } from "@/components/ui/animated-images";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DialogFooter } from "@/components/ui/dialog";
 import { projectLoader } from "@/lib/data/loaders";
+import { useLocales } from "@/lib/data/locales";
 
 export default async function ProjectPage({
   params,
@@ -20,7 +22,11 @@ export default async function ProjectPage({
     content,
     link,
     images,
+    wip,
+    demo,
+    internal,
   } = await projectLoader({ lang, project });
+  const locale = useLocales(lang);
   return (
     <div className="relative container mx-auto grid h-full place-items-center">
       <article className="px-6">
@@ -28,7 +34,18 @@ export default async function ProjectPage({
           <h1 className="mb-1 scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
             {metaData.title}
           </h1>
-
+          <div className="mr-auto ml-6 self-center">
+            {wip && (
+              <Badge variant={"destructive"}>
+                <p>{locale.wip}</p>
+              </Badge>
+            )}
+            {demo && (
+              <Badge variant={"secondary"}>
+                <p>Demo Project</p>
+              </Badge>
+            )}
+          </div>
           <Button
             asChild
             variant={"link"}
@@ -45,7 +62,7 @@ export default async function ProjectPage({
           </article>
           <div className="flex w-full flex-col justify-center px-2 md:px-12">
             <div className="mt-auto">
-              <AnimatedImages images={images} />
+              <AnimatedImages images={images} internal={internal} />
             </div>
             <TechSection tech={tech} />
           </div>

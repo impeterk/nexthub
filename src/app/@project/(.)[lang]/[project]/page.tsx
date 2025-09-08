@@ -4,6 +4,7 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 
 import { TechSection } from "@/components/projects/tech";
 import { AnimatedImages } from "@/components/ui/animated-images";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   DialogContent,
@@ -12,6 +13,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { projectLoader } from "@/lib/data/loaders";
+import { useLocales } from "@/lib/data/locales";
 
 export default async function ProjectModal({
   params,
@@ -25,11 +27,26 @@ export default async function ProjectModal({
     content,
     link,
     images,
+    wip,
+    demo,
   } = await projectLoader({ lang, project });
+  const locale = useLocales(lang);
   return (
     <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl lg:h-[calc(100vh-2*4rem)]">
-      <DialogHeader className="mb-1 border-b">
-        <DialogTitle className="pb-2">{metaData.title}</DialogTitle>
+      <DialogHeader className="mb-1 items-center border-b pb-2 lg:flex-row">
+        <DialogTitle className="pb-0">{metaData.title}</DialogTitle>
+        <div className="mr-auto ml-6 self-center max-lg:mx-auto">
+          {wip && (
+            <Badge variant={"destructive"}>
+              <p>{locale.wip}</p>
+            </Badge>
+          )}
+          {demo && (
+            <Badge variant={"secondary"}>
+              <p>Demo Project</p>
+            </Badge>
+          )}
+        </div>
       </DialogHeader>
       <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
         <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:min-h-0 lg:overflow-y-auto">

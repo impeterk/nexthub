@@ -35,6 +35,7 @@ export const locales = {
         "Oops! The project you are trying to access could not be found. It may have been removed, renamed, or is temporarily unavailable.",
       button: "Go Back to Home Page",
     },
+    wip: "Work in progress",
   },
   sk: {
     meta: {
@@ -70,6 +71,7 @@ export const locales = {
       description:
         "Oops! Projekt, ku ktory hladate, sa nenašiel. Mohol byť odstránený, premenovaný alebo je dočasne nedostupný.",
     },
+    wip: "Work in progress",
   },
 };
 

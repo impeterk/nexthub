@@ -6,9 +6,11 @@ import { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 
+import { useLocales } from "@/lib/data/locales";
 import { type Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
+import { Badge } from "./badge";
 import { Button } from "./button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./card";
 import {
@@ -27,6 +29,7 @@ export const HoverEffect = ({
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const params = useParams<{ lang: "en" | "sk"; project: string }>();
+  const locale = useLocales(params.lang);
 
   return (
     <div
@@ -60,10 +63,20 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card className="relative z-20 h-full overflow-hidden border border-transparent">
-            <CardHeader>
-              <CardTitle className="inline-flex items-center gap-2">
+            <CardHeader className="align-center flex-row">
+              <CardTitle className="mb-0 inline-flex items-center gap-2">
                 <p>{item.title}</p>
               </CardTitle>
+              {item.wip && (
+                <Badge variant={"destructive"} className="ml-auto">
+                  <p>{locale.wip}</p>
+                </Badge>
+              )}
+              {item.demo && (
+                <Badge variant={"secondary"} className="ml-auto">
+                  <p>Demo Project</p>
+                </Badge>
+              )}
             </CardHeader>
             <CardContent>
               <div className="py-2">{item.description[params.lang]}</div>

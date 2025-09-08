@@ -21,6 +21,8 @@ export type Project = {
   id: string;
   title: string;
   wip?: boolean;
+  internal?: boolean;
+  demo?: boolean;
   description: {
     en: string;
     sk: string;
@@ -146,7 +148,7 @@ export const projects: Project[] = [
         link: "https://tailwindcss.com",
       },
     ],
-    link: "https://mj2r.peterk.dev",
+    link: "https://github.com/impeterk/router-mail",
   },
   {
     id: "my-link-zone",
@@ -155,7 +157,8 @@ export const projects: Project[] = [
       en: "My LinkTree clone built with Next.js and React server components",
       sk: "Klon populárneho LinkTr.ee. Postavený na Next.js a React server komponentoch",
     },
-    link: "mylinkzone.vercel.app",
+    demo: true,
+    link: "https://mylinkzone.vercel.app",
     tech: [
       {
         name: "Next js",
@@ -212,5 +215,6 @@ export const projects: Project[] = [
       },
     ],
     link: "",
+    internal: true,
   },
 ];

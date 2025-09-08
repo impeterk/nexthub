@@ -6,14 +6,18 @@ import { useEffect, useState } from "react";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 
+import BrowserBlock from "@/assets/BrowserBlock";
+
 import { Skeleton } from "./skeleton";
 
 export const AnimatedImages = ({
   autoplay = false,
   images = [],
+  internal = false,
 }: {
   autoplay?: boolean;
   images?: string[];
+  internal?: boolean;
 }) => {
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -53,6 +57,43 @@ export const AnimatedImages = ({
       <div className="flex flex-col items-center">
         <div className="relative h-60 w-full md:h-80">
           <AnimatePresence>
+            {internal && (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.9,
+                  z: -100,
+                  rotate: randomRotateY(),
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  z: 0,
+                  rotate: 0,
+                  zIndex: 40,
+                  y: [0, -80, 0],
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.9,
+                  z: 100,
+                  rotate: randomRotateY(),
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 origin-bottom"
+              >
+                <div className="bg-accent/60 grid h-full w-full place-items-center rounded-3xl object-cover object-center py-6">
+                  <BrowserBlock className="text-accent-foreground size-full" />
+                </div>
+
+                <h4 className="mt-4 scroll-m-20 text-center text-xl font-semibold tracking-tight">
+                  Images are not available
+                </h4>
+              </motion.div>
+            )}
             {images.map((src, index) => (
               <motion.div
                 key={src}
