@@ -27,6 +27,11 @@ export const locales = {
           email: "Please provide a valid e-mail",
           message: "Please provide a lovely message",
         },
+        placeholers: {
+          name: "Your Name",
+          email: "Your@email.com",
+          message: "Your lovely message...",
+        },
       },
     },
     404: {
@@ -63,13 +68,18 @@ export const locales = {
           email: "Zadajte platný e-mail",
           message: "Napíšte milú správu",
         },
+        placeholers: {
+          name: "Tvoje meno",
+          email: "tvoje@email.com",
+          message: "Správa pre mňa...",
+        },
       },
     },
     404: {
-      title: "Projekt sa nenasiel",
-      button: "Naspat na Domovsku stranku",
+      title: "Projekt sa nenašiel",
+      rutton: "Naspäť na Domovskú stránku",
       description:
-        "Oops! Projekt, ku ktory hladate, sa nenašiel. Mohol byť odstránený, premenovaný alebo je dočasne nedostupný.",
+        "Oops! Projekt, ktorý hladáš, sa nenašiel. Mohol byť odstránený, premenovaný alebo je dočasne nedostupný.",
     },
     wip: "Work in progress",
   },

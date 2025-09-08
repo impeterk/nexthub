@@ -39,7 +39,7 @@ export function GetInTouch() {
             <Label htmlFor="name">{loc.name}</Label>
             <Input
               id="name"
-              placeholder="John Doe"
+              placeholder={loc.placeholers.name}
               type="text"
               name="name"
               required
@@ -52,7 +52,7 @@ export function GetInTouch() {
             <Label htmlFor="email">E-mail</Label>
             <Input
               id="email"
-              placeholder="john@doe.com"
+              placeholder={loc.placeholers.email}
               type="email"
               name="email"
               required
@@ -65,7 +65,7 @@ export function GetInTouch() {
             <Label htmlFor="message">{loc.message}</Label>
             <Textarea
               id="message"
-              placeholder="Yo mate, bitchin' landing page"
+              placeholder={loc.placeholers.message}
               name="message"
               rows={8}
               className="field-sizing-fixed"

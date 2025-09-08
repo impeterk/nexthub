@@ -54,4 +54,4 @@ Single-page web application designed to let users **capture selfies directly fro
 ## Repository & Demo
 
 - **Source Code**: ~~private repository~~
-- **Live Demo**: (coming soon)
+- **Live Demo**: [For Every You - EN](https://www.schwarzkopf-professional.com/com/en/silhouette-selfie.html)

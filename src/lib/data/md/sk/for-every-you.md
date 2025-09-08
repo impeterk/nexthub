@@ -1,36 +1,31 @@
 ---
-liveLink: "https://henkel-adhesives.com/check-my-ticket.html"
-images:
-  [
-    https://raw.githubusercontent.com/impeterk/sveltefolio/refs/heads/main/src/lib/assets/vue-desktop.webp,
-  ]
-title: Check My Ticket
+liveLink: "https://www.schwarzkopf-professional.com/com/en/silhouette-selfie.html"
+title: For every you
 ---
 
-## Overview
+## Prehľad
 
-This project is a **single-page full-stack web application** designed to extend and streamline workflows with **Azure DevOps**. The application focuses on secure **user authentication**, comprehensive **CRUD operations**, and direct integration with **Azure Logic Apps** for process automation. Built with a modern web technology stack, it demonstrates end-to-end development skills, including frontend engineering, backend integration, and deployment.
+Single-page web aplikácia navrhnutá na to, aby používateľom umožnila **zachytiť selfie priamo z kamery zariadenia**, vylepšiť ich pomocou **Photoroom image processing API**, a poskytnúť jednoduché nástroje na **úpravu, náhľad a stiahnutie**. Vytvorená s **React + TypeScript stack**, aplikácia zaručuje plynulý výkon, udržiavateľný kód a vysoko interaktívny používateľský zážitok.
 
 ---
 
-## Core Features
+## Kľúčové funkcie
 
-- **User Authentication & Authorization**
+- **Zachytávanie z kamery**
+  - Integrované s natívnymi API kamery zariadenia pre jednoduché fotenie.
+  - Podpora pre mobilné aj desktopové zariadenia s responzívnym rozložením.
 
-  - Implemented secure sign-up, login, and session handling using **Firebase Authentication**.
-  - Supports email/password-based authentication with token management.
-  - Integrated role-based access control for restricted operations.
+- **Spracovanie obrázkov cez Photoroom API**
+  - Odosielanie zachytených selfie do **Photoroom API** na odstránenie pozadia a vylepšenie.
+  - Návrat spracovaných obrázkov v reálnom čase pre náhľad a úpravy.
 
-- **CRUD Operations**
+- **Nástroje na úpravu obrázkov**
+  - Poskytuje ovládacie prvky pre zmenu veľkosti, presúvanie a aplikovanie základných filtrov.
+  - Živý náhľad zmien pred finálnym stiahnutím.
 
-  - Designed full **Create, Read, Update, Delete** functionality for managing Azure DevOps-related data entities.
-  - Implemented RESTful API endpoints and optimized database interactions.
-  - Ensured atomic operations with Firebase’s NoSQL database structure.
-
-- **Azure Logic Apps Integration**
-  - Connected application workflows with **Azure Logic Apps** to trigger automated processes.
-  - Enabled seamless communication between user actions and DevOps pipelines.
-  - Configured webhook-based triggers to respond to real-time events.
+- **Možnosti stiahnutia**
+  - Používatelia môžu exportovať selfie vo viacerých formátoch (JPEG, PNG).
+  - Optimalizovaný proces sťahovania pre mobilné aj desktopové zariadenia.
 
 ---
 
@@ -38,66 +33,25 @@ This project is a **single-page full-stack web application** designed to extend 
 
 ### Frontend
 
-- **Vue.js** – Component-based architecture for building reactive user interfaces.
-- **Pinia** – State management library for handling application-level state efficiently.
-- **TailwindCSS** – Utility-first CSS framework for responsive and maintainable UI styling.
+- **React** – Architektúra založená na komponentoch pre tvorbu dynamických UI.
+- **React Router** – Client-side routing pre plynulý single-page zážitok.
+- **TypeScript** – Silná typová kontrola pre škálovateľný a udržiavateľný kód.
+- **TailwindCSS** – Utility-first štýlovanie pre rýchly a konzistentný dizajn.
 
-### Backend
+### Backend / API Integrácia
 
-- **Firebase** – Provided serverless backend with authentication, cloud database (Firestore), and hosting.
-- **Azure Logic Apps** – Integrated workflows with external DevOps automation pipelines.
+- **Photoroom API** – Spracovanie obrázkov, odstránenie pozadia a vylepšenie selfie.
+- **Vite** – Moderný build nástroj pre rýchly vývoj a optimalizované produkčné buildy.
 
-### Additional Tools
+### Ďalšie nástroje
 
-- **Git & Azure DevOps Repos** for version control and CI/CD.
-- **Postman** for API testing and debugging.
-- **Vite** as the build tool for fast local development.
-
----
-
-## Architecture
-
-The application follows a **modular SPA (Single-Page Application) architecture**:
-
-1. **Frontend Layer**
-
-   - Vue.js handles routing, component rendering, and UI interaction.
-   - Pinia ensures predictable state management across views.
-   - TailwindCSS provides reusable, responsive design patterns.
-
-2. **Backend Layer**
-
-   - Firebase Authentication manages users and sessions.
-   - Firestore stores persistent user data and project-related records.
-   - Cloud Functions (serverless) handle asynchronous operations when needed.
-
-3. **Integration Layer**
-   - Azure Logic Apps enable automation of workflows (e.g., triggering pipeline runs based on app data changes).
-   - Webhooks connect DevOps events back into the app ecosystem.
-
----
-
-## Development Process
-
-- **Project Setup**: Initialized Vue project with Vite, integrated Pinia, and set up TailwindCSS.
-- **Authentication Module**: Configured Firebase Auth and built login/registration flows with proper error handling.
-- **CRUD Implementation**: Designed modular services for Firestore to handle all database transactions.
-- **Azure Integration**: Configured API connections to Logic Apps and validated end-to-end DevOps pipeline automation.
-- **Testing & Debugging**: Used Postman and Firebase emulator suite for local testing.
-- **Deployment**: Deployed frontend and backend via Firebase Hosting with CI/CD pipelines connected to Azure DevOps.
-
----
-
-## Key Takeaways
-
-- Strengthened knowledge of **Vue.js composition API** and modern state management with Pinia.
-- Gained experience in **serverless backend development** with Firebase.
-- Learned practical **DevOps automation practices** by integrating with Azure Logic Apps.
-- Built a scalable and maintainable SPA architecture that can be extended with new features.
+- **Git & GitHub** – Verzovanie kódu a kolaboratívne workflowy.
+- **GitHub Actions** – Automatizované nasadenia a testovacie náhľady.
+- **ESLint + Prettier** – Dodržiavanie kódovacích štandardov a konzistentné formátovanie.
 
 ---
 
 ## Repository & Demo
 
-- **Source Code**: [GitHub Repository](#) _(link here if available)_
-- **Live Demo**: [Hosted Application](#) _(link here if available)_
+- **Zdrojový kód**: ~~súkromný repozitár~~
+- **Live Demo**: [For Every You - EN](https://www.schwarzkopf-professional.com/com/en/silhouette-selfie.html)
