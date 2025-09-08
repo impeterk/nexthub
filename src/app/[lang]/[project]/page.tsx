@@ -18,6 +18,7 @@ export default async function ProjectPage({
     tech,
     data: metaData,
     content,
+    link,
     images,
   } = await projectLoader({ lang, project });
   return (
@@ -51,12 +52,18 @@ export default async function ProjectPage({
         </section>
 
         <DialogFooter>
-          <Button className="mr-12 max-sm:mx-auto max-sm:w-full" size={"lg"}>
-            <>
-              Live in Prod
-              <IconArrowNarrowRight />
-            </>
-          </Button>
+          {link && (
+            <Button
+              className="mr-12 max-sm:mx-auto max-sm:w-full"
+              size={"lg"}
+              asChild
+            >
+              <Link href={link} target="_blank">
+                Live in Prod
+                <IconArrowNarrowRight />
+              </Link>
+            </Button>
+          )}
         </DialogFooter>
       </article>
     </div>

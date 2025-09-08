@@ -6,6 +6,7 @@ const validLocales = ["en", "sk"];
 
 // Get the preferred locale, similar to the above or using a library
 export function middleware(request: NextRequest) {
+  console.log(Date.now(), "log from middleware");
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = validLocales.some(

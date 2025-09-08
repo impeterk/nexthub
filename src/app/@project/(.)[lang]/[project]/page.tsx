@@ -29,7 +29,7 @@ export default async function ProjectModal({
   return (
     <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl lg:h-[calc(100vh-2*4rem)]">
       <DialogHeader className="mb-1 border-b">
-        <DialogTitle className="pb-2">{project}</DialogTitle>
+        <DialogTitle className="pb-2">{metaData.title}</DialogTitle>
       </DialogHeader>
       <section className="flex min-h-0 flex-1 flex-col gap-12 max-lg:overflow-y-auto lg:grid lg:grid-cols-2">
         <article className="max-md:prose-sm prose prose-indigo dark:prose-invert lg:min-h-0 lg:overflow-y-auto">

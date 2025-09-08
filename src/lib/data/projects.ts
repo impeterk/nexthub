@@ -30,6 +30,7 @@ export type Project = {
     name: string;
     icon: ComponentType<{ className?: string }>;
     className: string;
+    link?: string;
   }[];
 };
 
@@ -42,17 +43,29 @@ export const projects: Project[] = [
       sk: "Single Page Application (SPA) vytvorená pre Henkel Webstudio pre lepšiu integráciu s Azure DevOps",
     },
     tech: [
-      { name: "Vue.js", icon: IconBrandVue, className: "text-emerald-500" },
+      {
+        name: "Vue.js",
+        icon: IconBrandVue,
+        className: "text-emerald-500",
+        link: "https://vuejs.org",
+      },
       {
         name: "Tailwind CSS",
         icon: IconBrandTailwind,
         className: "text-cyan-500",
+        link: "https://tailwindcss.com",
       },
-      { name: "Azure Cloud", icon: IconBrandAzure, className: "text-sky-500" },
+      {
+        name: "Azure Cloud",
+        icon: IconBrandAzure,
+        className: "text-sky-500",
+        link: "https://azure.microsoft.com/",
+      },
       {
         name: "Supabase",
         icon: IconBrandSupabase,
         className: "text-green-500",
+        link: "https://supabase.com",
       },
     ],
     link: "https://henkel-adhesives.com/check-my-ticket.html",
@@ -64,23 +77,31 @@ export const projects: Project[] = [
       en: "Selfie generation React application built for Schwarzkopf campaign",
       sk: "Selfie generátor vytvorený v Reacte pre novú Schwarzkopf kampaň",
     },
-    link: "#",
+    link: "",
     tech: [
-      { name: "React", icon: IconBrandReact, className: "text-sky-500" },
+      {
+        name: "React",
+        icon: IconBrandReact,
+        className: "text-sky-500",
+        link: "https://react.dev",
+      },
       {
         name: "React Router",
         icon: VscodeIconsFileTypeReactrouter,
         className: "size-7",
+        link: "https://reactrouter.com",
       },
       {
         name: "Typescript",
         icon: IconBrandTypescript,
         className: "text-blue-500",
+        link: "https://typescriptlang.org",
       },
       {
         name: "TailwindCSS",
         icon: IconBrandTailwind,
         className: "text-cyan-500",
+        link: "https://tailwindcss.com",
       },
     ],
   },
@@ -89,27 +110,40 @@ export const projects: Project[] = [
     title: "MJML + React Router",
     wip: true,
     description: {
-      en: "Scalable email templates solution for non-developers built on top of MJML and React Router (v7)",
+      en: "Scalable email templates solution for non-developers built with MJML and React Router (v7)",
       sk: "Riešenie Emailových templatov pre ne-vývojárov. Postavené na MJML a React Router (v7)",
     },
     tech: [
-      { name: "React", icon: IconBrandReact, className: "text-sky-500" },
+      {
+        name: "React",
+        icon: IconBrandReact,
+        className: "text-sky-500",
+        link: "https://react.dev",
+      },
       {
         name: "React Router",
         icon: VscodeIconsFileTypeReactrouter,
         className: "size-7",
+        link: "https://reactrouter.com",
       },
 
-      { name: "MJML", icon: VscodeIconsFileTypeMjml, className: "size-5" },
+      {
+        name: "MJML",
+        icon: VscodeIconsFileTypeMjml,
+        className: "size-5",
+        link: "https://mjml.io",
+      },
       {
         name: "Typescript",
         icon: IconBrandTypescript,
         className: "text-blue-500",
+        link: "https://typescriptlang.org",
       },
       {
         name: "TailwindCSS",
         icon: IconBrandTailwind,
         className: "text-cyan-500",
+        link: "https://tailwindcss.com",
       },
     ],
     link: "https://mj2r.peterk.dev",
@@ -123,14 +157,30 @@ export const projects: Project[] = [
     },
     link: "mylinkzone.vercel.app",
     tech: [
-      { name: "Next js", icon: IconBrandNextjs, className: "" },
-      { name: "Vercel", icon: IconBrandVercel, className: "fill-white" },
+      {
+        name: "Next js",
+        icon: IconBrandNextjs,
+        className: "",
+        link: "https://nextjs.org",
+      },
+      {
+        name: "Vercel",
+        icon: IconBrandVercel,
+        className: "fill-white",
+        link: "https://vercel.com",
+      },
       {
         name: "Drizzle ORM",
         icon: SimpleIconsDrizzle,
         className: "text-lime-400 p-1 rounded size-6",
+        link: "https://orm.drizzle.team",
       },
-      { name: "Turso DB", icon: SimpleIconsTurso, className: "text-teal-500" },
+      {
+        name: "Turso DB",
+        icon: SimpleIconsTurso,
+        className: "text-teal-500",
+        link: "https://turso.tech",
+      },
     ],
   },
   {
@@ -141,12 +191,19 @@ export const projects: Project[] = [
       sk: "Prerobenie komplexných kalkulátorov pre Henkel pomocou React-u",
     },
     tech: [
-      { name: "React", icon: IconBrandReact, className: "text-sky-500" },
+      {
+        name: "React",
+        icon: IconBrandReact,
+        className: "text-sky-500",
+        link: "https://react.dev",
+      },
       { name: "Sass", icon: IconBrandSass, className: "text-pink-500" },
+
       {
         name: "React Router",
         icon: VscodeIconsFileTypeReactrouter,
         className: "size-7",
+        link: "https://reactrouter.com",
       },
     ],
     link: "",
