@@ -77,7 +77,7 @@ export const locales = {
     },
     404: {
       title: "Projekt sa nenašiel",
-      rutton: "Naspäť na Domovskú stránku",
+      button: "Naspäť na Domovskú stránku",
       description:
         "Oops! Projekt, ktorý hladáš, sa nenašiel. Mohol byť odstránený, premenovaný alebo je dočasne nedostupný.",
     },
