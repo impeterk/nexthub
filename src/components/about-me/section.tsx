@@ -49,9 +49,12 @@ export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
         </article>
         <BlurFade delay={0.65} direction="up" inView className="flex md:hidden">
           <Button className="mx-auto w-full max-w-xs" size={"lg"} asChild>
-            <Link href="/resume.pdf" target="_blank">
+            <Link
+              href={{ pathname: "/resume.pdf", query: { lang } }}
+              target="_blank"
+            >
               <IconFileCv className="mr-2 size-5" />
-              Resume
+              {locale.aboutMe.resume}
             </Link>
           </Button>
         </BlurFade>
