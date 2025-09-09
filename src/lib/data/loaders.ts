@@ -27,7 +27,7 @@ export async function projectLoader({
     throw notFound();
   }
   const images = await Promise.all(
-    (await fs.readdir(path.posix.join(process.cwd(), "public", project))).map(
+    (await fs.readdir(path.join(process.cwd(), "public", project))).map(
       async (image) => {
         return `/${project}/${image}`;
       },
