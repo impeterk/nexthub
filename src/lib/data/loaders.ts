@@ -26,13 +26,7 @@ export async function projectLoader({
   if (!fileContent) {
     throw notFound();
   }
-  const images = await Promise.all(
-    (await fs.readdir(path.join(process.cwd(), "public", project))).map(
-      async (image) => {
-        return `/${project}/${image}`;
-      },
-    ),
-  );
+  const images = await imagesLoader(project);
 
   const activeProject = projects.find((val) => val.id === project);
   const { data, content: markdown } = matter(fileContent);
@@ -42,4 +36,19 @@ export async function projectLoader({
     data,
     content: await markdownToHtml(markdown),
   };
+}
+
+async function imagesLoader(project: string) {
+  const dirPath = path.posix.join(process.cwd(), "public", project);
+
+  try {
+    const files = await fs.readdir(dirPath);
+    const images = await Promise.all(
+      files.map(async (image) => `/${project}/${image}`),
+    );
+    return images;
+  } catch (err) {
+    console.warn(err);
+    return [];
+  }
 }

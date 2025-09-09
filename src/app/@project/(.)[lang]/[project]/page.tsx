@@ -14,6 +14,18 @@ import {
 } from "@/components/ui/dialog";
 import { projectLoader } from "@/lib/data/loaders";
 import { useLocales } from "@/lib/data/locales";
+import { projects } from "@/lib/data/projects";
+import { ProjectPageProps } from "@/lib/shared/types";
+
+export async function generateMetadata({ params }: ProjectPageProps) {
+  const { project, lang } = await params;
+  const activeProject = projects.find((proj) => proj.id === project);
+
+  return {
+    title: activeProject?.title,
+    description: activeProject?.description[lang],
+  };
+}
 
 export default async function ProjectModal({
   params,

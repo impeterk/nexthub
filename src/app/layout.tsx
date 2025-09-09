@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 
 import { BASE_URL } from "@/lib/consts";
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Peterk.dev Full-stack developer",
-    default: ` Peterk.dev Full-stack developer`,
+    default: " Peterk.dev Full-stack developer",
   },
   metadataBase: new URL(BASE_URL),
 };
