@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 
 import fs from "fs/promises";
-import { globby } from "globby";
 import matter from "gray-matter";
 import path from "path";
 
@@ -28,10 +27,9 @@ export async function projectLoader({
     throw notFound();
   }
   const images = await Promise.all(
-    (await globby(path.posix.join(process.cwd(), "src/assets", project))).map(
+    (await fs.readdir(path.posix.join(process.cwd(), "public", project))).map(
       async (image) => {
-        const base64url = await fs.readFile(image, "base64");
-        return `data:image/png;base64,${base64url}`;
+        return `/${project}/${image}`;
       },
     ),
   );
