@@ -39,7 +39,7 @@ export async function projectLoader({
 }
 
 async function imagesLoader(project: string) {
-  const dirPath = path.posix.join(process.cwd(), "public", project);
+  const dirPath = path.join(process.cwd(), "public", project);
 
   try {
     const files = await fs.readdir(dirPath);
