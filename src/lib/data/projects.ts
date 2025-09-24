@@ -13,9 +13,11 @@ import {
 } from "@tabler/icons-react";
 
 import SimpleIconsDrizzle from "@/assets/icon-drizzle";
+import LogosHono from "@/assets/icon-hono";
 import VscodeIconsFileTypeMjml from "@/assets/icon-mjml";
 import VscodeIconsFileTypeReactrouter from "@/assets/icon-react-router";
 import SimpleIconsTurso from "@/assets/icon-turso";
+import LogosCloudflareWorkersIcon from "@/assets/icon-workers";
 
 export type Project = {
   id: string;
@@ -216,5 +218,29 @@ export const projects: Project[] = [
     ],
     link: "",
     internal: true,
+  },
+  {
+    id: "hono-hacker-news",
+    title: "Hono Hacker news",
+    description: {
+      en: "Hacker news AI summarizer built with Hono and Couldflare workers",
+      sk: "Komplexné kalkulačky pre Henkel vytvorené a optimalizované v React.js",
+    },
+    tech: [
+      {
+        name: "Hono",
+        icon: LogosHono,
+        className: "size-6",
+        link: "https://hono.dev",
+      },
+      {
+        name: "Cloudflare workers",
+        icon: LogosCloudflareWorkersIcon,
+        className: "size-6",
+        link: "https://workers.cloudflare.com",
+      },
+    ],
+    link: "https://hn.peterk.dev/",
+    demo: true,
   },
 ];

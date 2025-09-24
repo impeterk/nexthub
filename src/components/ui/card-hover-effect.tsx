@@ -64,19 +64,22 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card className="relative z-20 h-full overflow-hidden border border-transparent">
             <CardHeader className="align-center flex-row">
-              <CardTitle className="mb-0 inline-flex items-center gap-2">
-                <p>{item.title}</p>
+              <CardTitle className="mb-0 flex w-full items-center gap-2">
+                <p className={cn(!item.wip && !item.demo && "py-0.75")}>
+                  {item.title}
+                </p>
+
+                {item.wip && (
+                  <Badge variant={"secondary"} className="ml-auto">
+                    <p>{locale.wip}</p>
+                  </Badge>
+                )}
+                {item.demo && (
+                  <Badge className="ml-auto">
+                    <p>Demo Project</p>
+                  </Badge>
+                )}
               </CardTitle>
-              {item.wip && (
-                <Badge variant={"secondary"} className="ml-auto">
-                  <p>{locale.wip}</p>
-                </Badge>
-              )}
-              {item.demo && (
-                <Badge className="ml-auto">
-                  <p>Demo Project</p>
-                </Badge>
-              )}
             </CardHeader>
             <CardContent>
               <div className="py-2">{item.description[params.lang]}</div>
