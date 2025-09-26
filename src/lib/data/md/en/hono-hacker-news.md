@@ -1,59 +1,62 @@
 ---
-liveLink: "https://mylinkzone.vercel.app"
-title: My Link Zone
+liveLink: "https://hn.peterk.dev"
+title: Hono Hacker News
 ---
 
 ## Overview
 
-A **Linktree-style web application** built with **Next.js** and **React Server Components**, designed to provide users with a customizable landing page where they can showcase and organize multiple links. Deployed seamlessly on **Vercel** for fast, global performance and powered by **Turso** as the primary database for scalable and low-latency data storage.
+A **server-side rendered Hacker News summarizer** built with **Hono** and **HonoJSX**, styled with **PicoCSS**, and deployed globally on **Cloudflare Workers**.  
+The application fetches articles from the **Hacker News RSS feed** and uses **Cloudflare Workers AI** to generate concise, AI-powered summaries — all rendered entirely on the server for fast, SEO-friendly performance.
 
 ---
 
 ## Core Features
 
-- **Customizable Profile Pages**
-  - Users can create and manage a personal landing page.
-  - Add profile images, customizable themes.
+- **AI-Powered Summaries**
+  - Summarizes Hacker News articles using **Cloudflare Workers AI**.
 
-- **Link Management**
-  - CRUD functionality to add, edit, reorder, and delete links.
-  - Real-time updates powered by server components.
+- **Server-Side Rendering (SSR)**
+  - All pages rendered with **HonoJSX** on the server.
+  - No client-side JavaScript required for displaying summaries.
 
-- **Responsive Design**
-  - Optimized for both mobile and desktop viewing.
-  - Provides a clean, minimal interface inspired by Linktree.
+- **Edge Deployment**
+  - Runs on **Cloudflare Workers**, ensuring global, low-latency access.
+  - Summaries and rendering happen at the edge, close to the user.
 
-- **Fast Deployment & Hosting**
-  - Deployed on **Vercel** for instant builds, previews, and CDN edge delivery.
+- **Clean & Minimal UI**
+  - Styled with **PicoCSS** for a lightweight, responsive design.
+  - Optimized for both desktop and mobile reading.
 
 ---
 
 ## Tech Stack
 
-### Frontend
+### Framework & Runtime
 
-- **Next.js** – Full-stack React framework with server components for fast rendering.
-- **React Server Components** – Efficient data fetching and rendering on the server.
-- **TailwindCSS** – Utility-first styling for a customizable and responsive UI.
+- **Hono** – Lightweight web framework for Cloudflare Workers.
+- **HonoJSX** – JSX templating for server-side rendered HTML.
+- **Cloudflare Workers** – Edge runtime with instant scaling.
 
-### Backend / Database
+### AI & Data
 
-- **Turso** – Edge database for low-latency queries and storage of user/link data.
-- **Drizle ORM** - Headless Typescript ORM with Head
-- **Next.js Server Components** – For secure data operations and link management logic.
+- **Cloudflare Workers AI** – Generates natural language summaries.
+- **Hacker News RSS Feed** – Source of the latest trending articles.
 
-### Deployment
+### Styling
 
-- **Vercel** – Hosting, CI/CD, and global edge deployment.
+- **PicoCSS** – Minimal, responsive CSS framework.
 
-### Additional Tools
+### Deployment & Tooling
 
+- **Cloudflare Workers** – Edge hosting and AI runtime.
 - **Git & GitHub** – Version control and collaboration.
-- **ESLint + Prettier** – Code quality and consistent formatting.
+- **ESLint + Prettier** – Code formatting and quality.
 
 ---
 
 ## Repository & Demo
 
-- **Source Code**: [Git hub repository](https://github.com/impeterk/nextlinkzone)
-- **Live Demo**: [MyLinkZone](https://mylinkzone.vercel.app)
+- **Source Code**: [GitHub Repository](https://github.com/impeterk/hn-hono)
+- **Live Demo**: [HackerNews Summarizer](https://hn.peterk.dev)
+
+---

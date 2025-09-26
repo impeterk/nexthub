@@ -29,7 +29,6 @@ export const bookConsultaion = async (prevState: any, formData: FormData) => {
       errors: data.error.flatten().fieldErrors,
     };
   }
-  console.log(data);
   const res = await insertConsultation(data.data);
   if (!res.length) {
     return dbError;

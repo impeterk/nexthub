@@ -25,7 +25,6 @@ export function GetInTouch() {
   const [state, formAction, isPending] = useActionState(getInTouch, null);
   const params = useParams<{ lang: "en" | "sk" }>();
   const loc = useLocales(params.lang).contact.git;
-  console.log({ state });
   return (
     <Card className="relative">
       <form action={formAction}>

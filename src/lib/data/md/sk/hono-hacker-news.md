@@ -1,59 +1,60 @@
 ---
-liveLink: "https://mylinkzone.vercel.app"
-title: My Link Zone
+liveLink: "https://hn.peterk.dev"
+title: Hono Hacker News
 ---
 
-## Overview
+## Prehľad
 
-A **Linktree-style web application** built with **Next.js** and **React Server Components**, designed to provide users with a customizable landing page where they can showcase and organize multiple links. Deployed seamlessly on **Vercel** for fast, global performance and powered by **Turso** as the primary database for scalable and low-latency data storage.
-
----
-
-## Core Features
-
-- **Customizable Profile Pages**
-  - Users can create and manage a personal landing page.
-  - Add profile images, customizable themes.
-
-- **Link Management**
-  - CRUD functionality to add, edit, reorder, and delete links.
-  - Real-time updates powered by server components.
-
-- **Responsive Design**
-  - Optimized for both mobile and desktop viewing.
-  - Provides a clean, minimal interface inspired by Linktree.
-
-- **Fast Deployment & Hosting**
-  - Deployed on **Vercel** for instant builds, previews, and CDN edge delivery.
+**Server-side renderovaný sumarizátor článkov z Hacker News** postavený na **Hono** a **HonoJSX**, so štýlmi v **PicoCSS** a nasadený globálne na **Cloudflare Workers**.  
+Aplikácia načítava články z **RSS feedu Hacker News** a používa **Cloudflare Workers AI** na generovanie stručných, AI-poháňaných súhrnov — všetko vykresľované priamo na serveri pre rýchly a SEO-friendly výkon.
 
 ---
 
-## Tech Stack
+## Hlavné funkcie
 
-### Frontend
+- **AI Súhrny**
+  - Zhrňuje články z Hacker News pomocou **Cloudflare Workers AI**.
 
-- **Next.js** – Full-stack React framework with server components for fast rendering.
-- **React Server Components** – Efficient data fetching and rendering on the server.
-- **TailwindCSS** – Utility-first styling for a customizable and responsive UI.
+- **Server-Side Rendering (SSR)**
+  - Všetky stránky sú renderované na serveri pomocou **HonoJSX**.
+  - Nie je potrebný žiadny klientsky JavaScript na zobrazovanie súhrnov.
 
-### Backend / Database
+- **Nasadenie na Edge**
+  - Beží na **Cloudflare Workers**, čo zaručuje globálny prístup s nízkou latenciou.
+  - Súhrny aj renderovanie prebiehajú na edge, blízko k používateľovi.
 
-- **Turso** – Edge database for low-latency queries and storage of user/link data.
-- **Drizle ORM** - Headless Typescript ORM with Head
-- **Next.js Server Components** – For secure data operations and link management logic.
+- **Čisté a minimalistické UI**
+  - Štýlované pomocou **PicoCSS** pre ľahký a responzívny dizajn.
+  - Optimalizované pre čítanie na desktope aj mobile.
 
-### Deployment
+---
 
-- **Vercel** – Hosting, CI/CD, and global edge deployment.
+## Technologický stack
 
-### Additional Tools
+### Framework a runtime
 
-- **Git & GitHub** – Version control and collaboration.
-- **ESLint + Prettier** – Code quality and consistent formatting.
+- **Hono** – Ľahký webový framework pre Cloudflare Workers.
+- **HonoJSX** – JSX templating pre server-side renderované HTML.
+- **Cloudflare Workers** – Edge runtime s okamžitým škálovaním.
+
+### AI a dáta
+
+- **Cloudflare Workers AI** – Generuje prirodzené jazykové súhrny.
+- **Hacker News RSS Feed** – Zdroj najnovších trendových článkov.
+
+### Štýlovanie
+
+- **PicoCSS** – Minimalistický, responzívny CSS framework.
+
+### Nasadenie a nástroje
+
+- **Cloudflare Workers** – Edge hosting a AI runtime.
+- **Git & GitHub** – Verzovanie kódu a spolupráca.
+- **ESLint + Prettier** – Formátovanie a kvalita kódu.
 
 ---
 
 ## Repository & Demo
 
-- **Source Code**: [Git hub repository](https://github.com/impeterk/nextlinkzone)
-- **Live Demo**: [MyLinkZone](https://mylinkzone.vercel.app)
+- **Source Code**: [GitHub Repository](https://github.com/impeterk/hn-hono)
+- **Live Demo**: [HackerNews Summarizer](https://hn.peterk.dev)

@@ -41,8 +41,10 @@ export default async function ProjectModal({
     images,
     wip,
     demo,
+    internal,
   } = await projectLoader({ lang, project });
   const locale = useLocales(lang);
+
   return (
     <DialogContent className="h-full gap-0 max-lg:max-h-[95svh] sm:max-w-7xl lg:h-[calc(100vh-2*4rem)]">
       <DialogHeader className="mb-1 items-center border-b pb-2 lg:flex-row">
@@ -66,7 +68,7 @@ export default async function ProjectModal({
         </article>
         <div className="flex w-full flex-col justify-center px-2 md:px-12">
           <div className="">
-            <AnimatedImages images={images} />
+            <AnimatedImages images={images} internal={internal} />
           </div>
           <TechSection tech={tech} />
         </div>
