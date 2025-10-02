@@ -107,7 +107,7 @@ export const HoverEffect = ({
                     variant={"link"}
                     className="ml-auto hover:cursor-pointer"
                   >
-                    Learn More
+                    {locale.projects.learnMore}
                   </Button>
                 </Link>
               </section>

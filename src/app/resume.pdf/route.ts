@@ -6,10 +6,8 @@ import path from "path";
 import { getLocale } from "@/lib/data/locales";
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams;
-  const lang = searchParams.get("lang") || getLocale(request);
   const resume = await readFile(
-    path.join(process.cwd(), "src/assets", `resume-${lang}.pdf`),
+    path.join(process.cwd(), "src/assets", `resume.pdf`),
   );
   const headers = new Headers(request.headers);
   // remember to change the filename here

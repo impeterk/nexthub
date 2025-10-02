@@ -9,6 +9,7 @@ export const locales = {
     },
     projects: {
       title: "Projects",
+      learnMore: "Learn more",
     },
     aboutMe: {
       title: "About Me",
@@ -50,10 +51,11 @@ export const locales = {
     },
     projects: {
       title: "Projekty",
+      learnMore: "Viac info",
     },
     aboutMe: {
       title: "O mne",
-      resume: "Životopis",
+      resume: "Životopis (en)",
     },
     contact: {
       title: ["Kontaktujte ma", "Rezervujte si konzultáciu"],

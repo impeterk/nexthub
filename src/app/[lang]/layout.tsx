@@ -6,7 +6,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 
-import DynamicFavicon from "@/components/dynamic-icon";
 import { Footer, Header } from "@/components/layout";
 import { GTM_ID } from "@/lib/consts";
 import { useLocales } from "@/lib/data/locales";
@@ -49,7 +48,6 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
       >
         <NextTopLoader color="oklch(0.71 0.16 293.4)" />
         <Providers>
-          <DynamicFavicon />
           <Header lang={lang} />
           <main>{props.children}</main>
           <Footer lang={lang} />

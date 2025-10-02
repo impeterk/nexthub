@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "@/app/icon.png";
+import logo from "@@/public/favicon-dark.png";
 
 import LanguageSwitch from "./lang-switch";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -20,7 +20,7 @@ export const Header = ({ lang }: { lang: string }) => {
             width={32}
             height={(936 / 1080) * 32}
             alt="logo"
-            className="dark:invert"
+            className="not-dark:invert"
           />
           Peterk.dev
         </Link>
