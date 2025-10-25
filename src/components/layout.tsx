@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,7 +32,9 @@ export const Header = ({ lang }: { lang: string }) => {
   );
 };
 
-export const Footer = ({ lang }: { lang: string }) => {
+export const Footer = async ({ lang }: { lang: string }) => {
+  "use cache";
+  cacheLife("weeks");
   return (
     <footer className="text-muted-foreground container mx-auto flex items-center justify-center p-4 text-center">
       <Button variant={"link"} className="ml-auto">

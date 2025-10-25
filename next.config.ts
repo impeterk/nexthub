@@ -1,10 +1,8 @@
 import { type NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // typedRoutes: true, //not supported by turbopack yet :-(
-    reactCompiler: true,
-  },
+  cacheComponents: true,
+  reactCompiler: true,
   images: {
     remotePatterns: [
       {
@@ -16,9 +14,6 @@ const nextConfig: NextConfig = {
         hostname: "next.peterk.dev",
       },
     ],
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 };
 
