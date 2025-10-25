@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -16,7 +15,7 @@ import { GetInTouch } from "./get-in-touch";
 export default function ContactSection({ children }: { children: ReactNode }) {
   const searchParams = useSearchParams();
   const params = useParams<{ lang: "en" | "sk" }>();
-  const locale = useLocales(params.lang).contact;
+  const locale = useLocales(params.lang)?.contact;
 
   const tab = searchParams.get("tab") ?? "contact";
   return (
@@ -25,7 +24,7 @@ export default function ContactSection({ children }: { children: ReactNode }) {
         <RetroGrid className="z-[-1] h-[125%] -translate-y-1/3" angle={65} />
         <WordRotate
           duration={5000}
-          words={locale.title}
+          words={locale?.title}
           className="bg-opacity-50 from-foreground to-primary bg-gradient-to-b bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl"
         />
 
@@ -36,7 +35,7 @@ export default function ContactSection({ children }: { children: ReactNode }) {
           >
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="contact">
-                <IconMail /> {locales[params.lang].contact.title[0]}
+                <IconMail /> {locales[params.lang]?.contact.title[0]}
               </TabsTrigger>
               <TabsTrigger value="consultation" disabled>
                 {/* <Link */}
@@ -48,7 +47,7 @@ export default function ContactSection({ children }: { children: ReactNode }) {
                 {/*   scroll={false} */}
                 {/* > */}
                 <IconCalendarPlus /> {
-                  locales[params.lang].contact.title[1]
+                  locales[params.lang]?.contact.title[1]
                 }{" "}
                 {/* </Link> */}
               </TabsTrigger>

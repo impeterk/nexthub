@@ -18,7 +18,7 @@ export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
   return (
     <section className="mt-10 bg-transparent pt-20 pb-10">
       <h2 className="to-primary relative z-20 bg-gradient-to-b from-indigo-950 to-50% bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
-        {locale.aboutMe.title}
+        {locale?.aboutMe.title}
       </h2>
       <div className="flex flex-col justify-around gap-8 md:flex-row">
         <div className="shrink-0">
@@ -35,7 +35,7 @@ export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
                 target="_blank"
               >
                 <IconFileCv className="mr-2 size-5 capitalize" />
-                {locale.aboutMe.resume}
+                {locale?.aboutMe.resume}
               </Link>
             </Button>
           </BlurFade>
@@ -54,7 +54,7 @@ export default function AboutMeSection({ lang }: { lang: "en" | "sk" }) {
               target="_blank"
             >
               <IconFileCv className="mr-2 size-5" />
-              {locale.aboutMe.resume}
+              {locale?.aboutMe.resume}
             </Link>
           </Button>
         </BlurFade>

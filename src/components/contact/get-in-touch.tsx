@@ -24,60 +24,61 @@ import { Textarea } from "../ui/textarea";
 export function GetInTouch() {
   const [state, formAction, isPending] = useActionState(getInTouch, null);
   const params = useParams<{ lang: "en" | "sk" }>();
-  const loc = useLocales(params.lang).contact.git;
+  const locale = useLocales(params.lang);
+  const loc = locale?.contact.git;
   return (
     <Card className="relative">
       <form action={formAction}>
         <input hidden value={params.lang} readOnly name="lang" />
         <CardHeader>
-          <CardTitle>{loc.title}</CardTitle>
-          <CardDescription dangerouslySetInnerHTML={{ __html: loc.desc }} />
+          <CardTitle>{loc?.title}</CardTitle>
+          <CardDescription dangerouslySetInnerHTML={{ __html: loc?.desc }} />
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           <div className="z-50 space-y-1">
-            <Label htmlFor="name">{loc.name}</Label>
+            <Label htmlFor="name">{loc?.name}</Label>
             <Input
               id="name"
-              placeholder={loc.placeholers.name}
+              placeholder={loc?.placeholers.name}
               type="text"
               name="name"
               required
             />
             {state?.errors?.name?.[0] && (
-              <Label className="text-destructive">{loc.errors.name}</Label>
+              <Label className="text-destructive">{loc?.errors.name}</Label>
             )}
           </div>
           <div className="space-y-1">
             <Label htmlFor="email">E-mail</Label>
             <Input
               id="email"
-              placeholder={loc.placeholers.email}
+              placeholder={loc?.placeholers.email}
               type="email"
               name="email"
               required
             />
             {state?.errors?.email?.[0] && (
-              <Label className="text-destructive">{loc.errors.email}</Label>
+              <Label className="text-destructive">{loc?.errors.email}</Label>
             )}
           </div>
           <div className="space-y-1">
-            <Label htmlFor="message">{loc.message}</Label>
+            <Label htmlFor="message">{loc?.message}</Label>
             <Textarea
               id="message"
-              placeholder={loc.placeholers.message}
+              placeholder={loc?.placeholers.message}
               name="message"
               rows={8}
               className="field-sizing-fixed"
               required
             />
             {state?.errors?.message?.[0] && (
-              <Label className="text-destructive">{loc.errors.message}</Label>
+              <Label className="text-destructive">{loc?.errors.message}</Label>
             )}
           </div>
         </CardContent>
         <CardFooter>
           <Button className="" type="submit" disabled={isPending}>
-            {loc.submit} <IconSend2 className="ml-2 size-5" />
+            {loc?.submit} <IconSend2 className="ml-2 size-5" />
           </Button>
         </CardFooter>
       </form>

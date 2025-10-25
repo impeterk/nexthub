@@ -19,14 +19,14 @@ export default function NotFoundProjectPage() {
   return (
     <DialogContent className="max-lg:max-h-[95svh] sm:max-w-xl">
       <DialogHeader className="mb-1">
-        <DialogTitle className="pb-2">{locale[404].title}</DialogTitle>
+        <DialogTitle className="pb-2">{locale[404]?.title}</DialogTitle>
       </DialogHeader>
       <article className="max-md:prose-sm prose prose-indigo dark:prose-invert mt-auto">
-        <p>{locale[404].description}</p>
+        <p>{locale[404]?.description}</p>
       </article>
       <DialogFooter className="mt-auto">
         <Button className="w-full" asChild>
-          <Link href={`/${params.lang}`}>{locale[404].button}</Link>
+          <Link href={`/${params.lang}`}>{locale[404]?.button}</Link>
         </Button>
       </DialogFooter>
     </DialogContent>

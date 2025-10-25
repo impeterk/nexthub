@@ -52,7 +52,7 @@ export default async function ProjectModal({
         <div className="mr-auto ml-6 self-center max-lg:mx-auto">
           {wip && (
             <Badge variant={"secondary"}>
-              <p>{locale.wip}</p>
+              <p>{locale?.wip}</p>
             </Badge>
           )}
           {demo && (

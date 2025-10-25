@@ -12,13 +12,6 @@ import { useLocales } from "@/lib/data/locales";
 import { projects } from "@/lib/data/projects";
 import { ProjectPageProps } from "@/lib/shared/types";
 
-export async function generateStaticParams() {
-  const params = projects.map((proj) => {
-    return { project: proj.id };
-  });
-  return [...params, { lang: "en" }, { lang: "sk" }];
-}
-
 export async function generateMetadata({ params }: ProjectPageProps) {
   const { project, lang } = await params;
   const activeProject = projects.find((proj) => proj.id === project);
@@ -52,7 +45,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="mr-auto ml-6 self-center">
             {wip && (
               <Badge variant={"secondary"}>
-                <p>{locale.wip}</p>
+                <p>{locale?.wip}</p>
               </Badge>
             )}
             {demo && (

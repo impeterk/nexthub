@@ -77,7 +77,7 @@ export default function Projects({ lang }: { lang: "en" | "sk" }) {
     <section className="bg-background relative mt-10 w-full py-20">
       <div className="container mx-auto pb-20">
         <h2 className="to-primary relative z-20 bg-gradient-to-b from-indigo-950 to-50% bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
-          {locale.projects.title}
+          {locale?.projects.title}
         </h2>
       </div>
       <div

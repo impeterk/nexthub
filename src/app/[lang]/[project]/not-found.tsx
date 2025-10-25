@@ -14,10 +14,10 @@ export default function NotFoundProjectPage() {
     <div className="relative container mx-auto h-full">
       <article className="px-6">
         <h1 className="mb-1 scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance md:text-4xl">
-          {locale[404].title}
+          {locale[404]?.title}
         </h1>
         <Button className="w-full" asChild>
-          <Link href="/">{locale[404].button}</Link>
+          <Link href="/">{locale[404]?.button}</Link>
         </Button>
       </article>
     </div>

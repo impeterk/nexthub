@@ -1,5 +1,6 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
@@ -28,8 +29,8 @@ export async function generateMetadata(
   const { lang } = (await props.params) as { lang: "en" | "sk" };
   const locale = useLocales(lang);
   return {
-    title: locale.meta.title,
-    description: locale.meta.description,
+    title: locale?.meta.title,
+    description: locale?.meta.description,
   };
 }
 
@@ -50,7 +51,9 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
         <Providers>
           <Header lang={lang} />
           <main>{props.children}</main>
-          <Footer lang={lang} />
+          <Suspense>
+            <Footer lang={lang} />
+          </Suspense>
         </Providers>
         <SpeedInsights />
         <Analytics />

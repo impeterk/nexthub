@@ -71,7 +71,7 @@ export const HoverEffect = ({
 
                 {item.wip && (
                   <Badge variant={"secondary"} className="ml-auto">
-                    <p>{locale.wip}</p>
+                    <p>{locale?.wip}</p>
                   </Badge>
                 )}
                 {item.demo && (
@@ -107,7 +107,7 @@ export const HoverEffect = ({
                     variant={"link"}
                     className="ml-auto hover:cursor-pointer"
                   >
-                    {locale.projects.learnMore}
+                    {locale?.projects.learnMore}
                   </Button>
                 </Link>
               </section>
