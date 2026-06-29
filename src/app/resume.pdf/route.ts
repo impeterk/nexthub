@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
   const headers = new Headers(request.headers);
   // remember to change the filename here
   headers.append("Content-Type", "application/pdf");
-  // @ts-expect-error response is not body
   return new Response(resume, {
     headers,
   });
